@@ -1,0 +1,27 @@
+.user-action-edit {
+  cursor: pointer;
+}
+
+.user-action-delete {
+  cursor: pointer;
+}
+
+.user-action-search {
+    cursor: pointer;
+}
+
+.shown {
+  background-color: #d9534f!important;
+}
+
+tr.odd:hover td{
+    background-color: #ededed;
+}
+
+tr.even:hover td{
+    background-color: #ededed;
+}
+
+.form-field-margin-bottom{
+    margin-bottom: 15px;
+}
