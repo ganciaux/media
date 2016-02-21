@@ -10,6 +10,15 @@
     cursor: pointer;
 }
 
+.search-list{
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+.modal-search{
+    width: 80%;
+}
+
 .shown {
   background-color: #d9534f!important;
 }

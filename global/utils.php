@@ -64,3 +64,7 @@ function setSearchString($string){
     $newString=str_replace(array_keys($replace), $replace, $string);
     return preg_replace('/\s+/', '', $newString);
 }
+
+function debugPdo($sth){
+    $sth->debugDumpParams();
+}

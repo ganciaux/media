@@ -64,9 +64,9 @@ function ajaxErrorLog(jqxhr, textStatus, error, name, id){
 function dataTableSet(id){
     $('#'+id).DataTable({
         "language": {
-            "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/French.json"
+            "url": "/media/public/json/French.json"
         },
-        "lengthMenu": [50, 100, 250, "Tous"]
+        "lengthMenu": [[50, 100, 250, -1],[50, 100, 250, "Tous"]]
         //paging: false
     });
 }
@@ -184,6 +184,11 @@ function modalActionDelete() {
     });
 }
 
+function modalActionSearch(){
+    console.log('modalActionSearch');
+    
+}
+
 /*
  *
  */
@@ -228,6 +233,7 @@ $('document').ready(function() {
     });
 
     $(document).on('click', '.object-action-search', function() {
+        console.log("object-action-search");
         $.ajax({
             url: $(this).data('url'),
             type: "POST",
@@ -276,8 +282,9 @@ $('document').ready(function() {
 					url    = form.attr('action'),
 					submit = form.find('[type=submit]'),
 					object = form.data('object'),
-					action = form.data('action');
-
+					action = form.data('action'),
+                                        formdataType = form.attr('data-type');
+console.log(formdataType);
 			// Check for file inputs.
 			if (form.find('[type=file]').length) {
 
@@ -322,18 +329,19 @@ $('document').ready(function() {
 					type: "POST",
 					url: url,
 					data: data,
-					dataType: 'json',
+					dataType: formdataType,
 					cache: false,
 					contentType: contentType,
 					processData: false
 
 			// Response.
 			}).always(function(response, status) {
+     
 					// Reset errors.
 					resetModalFormErrors();
 					
 					// Check for errors.
-					if (response.status == 422) {
+					if (response.status == 422 && formdataType=='json') {
 							var errors = $.parseJSON(response.responseText);
 
 							// Iterate through errors object.
@@ -352,7 +360,7 @@ $('document').ready(function() {
 							}
 
 					// If successful, reload.
-					} else {
+					} else if (formdataType=='json') {
 							//location.reload();
 							if (submit.is('button')) {
 									submit.html(submitOriginal);
@@ -368,9 +376,12 @@ $('document').ready(function() {
 							}
 							else if (typeof response.callback != 'undefined'){
 									console.log('form.bootstrap-modal-form: callback');
+                                                                        console.log(response.contents);
 									;//fnjsoncallback[response.callback](response,'table-'+object,response.id, action);
 							}
 					}
+                                        else
+                                            $('#contentSearchList').html(response);
 			});
 	});
 

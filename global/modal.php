@@ -18,7 +18,7 @@
 </div><!-- /.modal -->
 
 <div class="modal fade" tabindex="-1" role="dialog" id="modal-search">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-search">
         <div class="modal-content">
             <input type="hidden" id="modal-search-object" value="0">
             <div class="modal-header">

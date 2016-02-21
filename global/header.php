@@ -13,21 +13,21 @@
     <meta name="csrf-token" content="<?php print session::csrf_token(); ?>"/>
     <title>Médiathèque</title>
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css" rel="stylesheet">
-	<link href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet">
-	<link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
-	<link href="/media/public/css/media.css" rel="stylesheet">
+    <link href="/media/public/css/bootstrap-3.3.6.css" rel="stylesheet">
+    <link href="/media/public/css/font-awesome-4.5.0.css" rel="stylesheet">
+    <link href="/media/public/css/dataTables.bootstrap-1.10.11.css" rel="stylesheet">
+    <link href="/media/public/css/jquery.dataTables-1.10.11.css" rel="stylesheet">
+    <link href="/media/public/css/bootstrap-datepicker.css" rel="stylesheet" type="text/css" />
+    <link href="/media/public/css/media.css" rel="stylesheet">
 		<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/media/public/js/jquery-2.1.4.js"></script>
     <script src="/media/public/js/bootstrap-3.3.6.js"></script>
-	<script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>		
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
-	<script src="/media/public/js/media.js"></script>
+    <script src="/media/public/js/jquery.dataTables-1.10.11.js"></script>
+    <script src="/media/public/js/dataTables.bootstrap-1.10.11.js"></script>		
+    <script src="/media/public/js/bootstrap-datepicker.js"></script>
+    <script src="/media/public/js/media.js"></script>
   </head>
   <body role="document">
 	<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">

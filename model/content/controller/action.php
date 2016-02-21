@@ -23,14 +23,14 @@
 		$errors['contentName']="Nom manquant";
 	}
 
-	if (isset($_REQUEST['contentDisk']) && $_REQUEST['contentDisk']>0){
+	if (isset($_REQUEST['contentDisk'])){
 		$content->idDisk  = $_REQUEST['contentDisk'];
 	}else{
 		$status=422;
 		$errors['contentDisk']="Disque dur manquant";
 }
 
-	if (isset($_REQUEST['contentType']) && $_REQUEST['contentType']>0){
+	if (isset($_REQUEST['contentType'])){
 		$content->idContentType  = $_REQUEST['contentType'];
 	}else{
 		$status=422;

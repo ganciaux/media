@@ -18,7 +18,8 @@ class FormBuilder {
 		$attributes['action'] = $this->getAction($options);
 		$attributes['accept-charset'] = 'UTF-8';
 		$attributes['method'] = $this->getMethod($options);
-
+                $attributes['data-type']= $this->getDataType($options);
+                
 		if (isset($options['files']) && $options['files'])
 		{
 			$options['enctype'] = 'multipart/form-data';
@@ -72,6 +73,17 @@ class FormBuilder {
 		
 		else 
 			return "post";
+	}
+        
+        protected function getDataType(array $options)
+	{
+		if (isset($options['data-type']))
+		{
+			return $options['data-type'];
+		}
+		
+		else 
+                    return "json";
 	}
 	
 	public function attributes($attributes)

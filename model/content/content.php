@@ -79,44 +79,44 @@ class content{
 		$whereoption=" where idContent>0";
 		$orderby=" order by name";
 
-		if (isset($options['idDisk'])){
-			$whereoption.=" and idDisk=:idDisk";
+		if (isset($options['contentDisk'])){
+			$whereoption.=" and idDisk=:contentDisk";
 		}
-		if (isset($options['idContentType'])){
-			$whereoption.=" and idContentType=:idContentType";
+                if (isset($options['contentLanguage'])){
+			$whereoption.=" and idLanguage=:contentLanguage";
 		}
-		if (isset($options['name'])){
-			$whereoption.=" and search like:name";
+		if (isset($options['contentType'])){
+			$whereoption.=" and idContentType=:contentType";
 		}
-		if (isset($options['year'])){
-			$whereoption.=" and year like:name";
+		if (isset($options['contentName'])){
+			$whereoption.=" and search like:contentName";
 		}
-		if (isset($options['idLanguage'])){
-			$whereoption.=" and idLanguage=:idLanguage";
+		if (isset($options['contentYear'])){
+			$whereoption.=" and year=:contentYear";
 		}
-		if (isset($options['idQuality'])){
-			$whereoption.=" and idQuality=:idQuality";
+		if (isset($options['contentQuality'])){
+			$whereoption.=" and idQuality=:contentQuality";
 		}
 
 		$req = $bdd->prepare($sql.$whereoption.$orderby);
 
-		if (isset($options['idDisk'])){
-			$req->bindParam(":idDisk", $options['idDisk'], PDO::PARAM_INT);
+		if (isset($options['contentDisk'])){
+			$req->bindParam(":idDisk", $options['contentDisk'], PDO::PARAM_INT);
 		}
-		if (isset($options['idContentType'])){
-			$req->bindParam(":idContentType", $options['idContentType'], PDO::PARAM_INT);
+		if (isset($options['contentType'])){
+			$req->bindParam(":idContentType", $options['contentType'], PDO::PARAM_INT);
 		}
-		if (isset($options['name'])){
-			$req->bindParam(":search", $options['name'], PDO::PARAM_STR);
+		if (isset($options['contentName'])){
+			$req->bindParam(":search", $options['contentName'], PDO::PARAM_STR);
 		}
-		if (isset($options['year'])){
-			$req->bindParam(":idContent", $options['year'], PDO::PARAM_INT);
+		if (isset($options['contentYear'])){
+			$req->bindParam(":idContent", $options['contentYear'], PDO::PARAM_INT);
 		}
-		if (isset($options['idLanguage'])){
-			$req->bindParam(":idContent", $options['idLanguage'], PDO::PARAM_INT);
+		if (isset($options['contentLanguage'])){
+			$req->bindParam(":idContent", $options['contentLanguage'], PDO::PARAM_INT);
 		}
-		if (isset($options['idQuality'])){
-			$req->bindParam(":idContent", $options['idQuality'], PDO::PARAM_INT);
+		if (isset($options['contentQuality'])){
+			$req->bindParam(":idContent", $options['contentQuality'], PDO::PARAM_INT);
 		}
 
 		$result=$req->execute();
@@ -143,6 +143,21 @@ class content{
 		return $data;
 	}
 
+        static function diskExists($idDisk, $idContent){
+            global $bdd;
+            $req = $bdd->prepare('select count(*) from content where idDisk=:idDisk and idContent=:idContent');
+            $req->execute(array(':idDisk' => $idDisk,':idContent' => $idContent ));
+            $result=$req->execute();
+
+            if ($result==1){
+		$res=$req->fetch();
+                $result=$res[0];
+            }else
+                $result=-1;
+            
+            return $result;
+        }
+        
 	function getContent($id){
 		global $bdd;
 		$req = $bdd->prepare('select idContent,idContentType,name,search,year,idDisk,idLanguage,idQuality from content where idContent=:id');

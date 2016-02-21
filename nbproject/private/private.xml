@@ -4,9 +4,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/model/disk/view/diskManage.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/model/content/view/contentList.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/public/css/media.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/model/disk/view/diskList.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/global/formBuilder.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/model/content/controller/action.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/model/content/view/contentManage.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/model/content/view/content.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/model/content/view/contentFormSearch.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/model/content/content.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/global/utils.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/public/js/media.js</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/global/session.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/media/index.php</file>
         </group>
     </open-files>

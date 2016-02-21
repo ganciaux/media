@@ -30,7 +30,7 @@ $disk = new disk($id);
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h3 class="panel-title">
-			Liste des médias <i class="fa fa-plus-square object-action-search user-action-search" data-url="/media/model/content/view/contentFormSearch.php"></i>
+			Liste des médias <i class="fa fa-plus-square object-action-search user-action-search" data-url="/media/model/content/view/contentFormSearch.php?idDisk=<?php print $id; ?>"></i>
 		</h3>
 	</div>
 	<div class="panel-body">
