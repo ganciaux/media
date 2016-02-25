@@ -5,15 +5,22 @@
 	$result=1;
 	$status=1;
 	$content=new content();
-	$message="Success";
-	$callback='';
-	$url='';
+	$message="";
+	$callback="";
+	$url="";
 	$errors = array();
-	
+	;
+
+	if (isset($_REQUEST['actorList'])){
+		$content->actorList=$_REQUEST['actorList'];
+	}
+
 	if (isset($_REQUEST['idContent'])){
 		$content->idContent = $_REQUEST['idContent'];
+		$message="Mise à jour réussie";
 	}else{
 		$content->idContent=0;
+		$message="Création réussie";
 	}
 	
 	if (isset($_REQUEST['contentName']) && !empty($_REQUEST['contentName'])){
@@ -59,13 +66,19 @@
 	}
 	
 	if ($status==1){
-		if ($content->idContent==0){
-			$result=$content->insert();
-			$callback="/media/model/content/view/contentManage.php?idContent=".$content->idContent;
+		if (content::exists($_REQUEST['contentName'],$content->idContent)==0) {
+			if ($content->idContent == 0) {
+				$result = $content->insert();
+				$callback = "/media/model/content/view/contentManage.php?idContent=" . $content->idContent;
+			} else {
+				$result = $content->update();
+				$callback = "/media/model/content/content.php?idContent=" . $content->idContent;
+			}
 		}
 		else{
-			$result=$content->update();
-			$callback="/media/model/content/content.php?idContent=".$content->idContent;
+			$status=422;
+			$errors['contentName']="Existe déja";
+			$result=0;
 		}
 	}else{
 		$result=0;

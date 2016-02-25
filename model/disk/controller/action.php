@@ -12,8 +12,10 @@
 	
 	if (isset($_REQUEST['idDisk'])){
 		$disk->idDisk = $_REQUEST['idDisk'];
+		$message="Mise à jour réussie";
 	}else{
 		$disk->idDisk=0;
+		$message="Création réussie";
 	}
 	
 	if (isset($_REQUEST['diskName']) && !empty($_REQUEST['diskName'])){

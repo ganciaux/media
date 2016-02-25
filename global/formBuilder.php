@@ -18,17 +18,27 @@ class FormBuilder {
 		$attributes['action'] = $this->getAction($options);
 		$attributes['accept-charset'] = 'UTF-8';
 		$attributes['method'] = $this->getMethod($options);
-                $attributes['data-type']= $this->getDataType($options);
+		$attributes['data-type']= $this->getDataType($options);
                 
-		if (isset($options['files']) && $options['files'])
-		{
-			$options['enctype'] = 'multipart/form-data';
+		if (isset($options['files']) && $options['files']) {
+			$attributes['enctype'] = 'multipart/form-data';
 		}
 
-		if (! isset($options['class']))
-			$attributes['class']='bootstrap-modal-form form-horizontal';
-		else
-			$attributes['class']=$options['class'];
+		if (isset($options['data-object'])) {
+			$attributes['data-object'] = $options['data-object'];
+		}
+
+		if (isset($options['id'])) {
+			$attributes['id'] = $options['id'];
+		} else{
+			$attributes['id'] = "form-".uniqid();
+		}
+
+		if (! isset($options['class'])) {
+			$attributes['class'] = 'bootstrap-modal-form form-horizontal';
+		} else {
+			$attributes['class'] = $options['class'];
+		}
 		
 		$attributes = $this->attributes($attributes);
 
@@ -159,7 +169,7 @@ class FormBuilder {
 			$options['id'] = $name;
 
 		if (! isset($optionsDIV['class']))
-			$optionsDIV['class']="form-group form-field col-xs-10";
+			$optionsDIV['class']="form-group form-field col-xs-12";
 
 		if (! isset($options['class']))
 			$options['class']="form-control";
@@ -199,7 +209,7 @@ class FormBuilder {
 			$options['class']="form-control";
 
 		if (! isset($optionsDIV['class']))
-			$optionsDIV['class']="form-group form-field col-xs-10";
+			$optionsDIV['class']="form-group form-field col-xs-12";
 
 		if (! isset($options['style']))
 			;
@@ -218,7 +228,7 @@ class FormBuilder {
 		return '<div class="'.$optionsDIV['class'].'">'.$label.'<select'.$this->attributes($options).'>'.$selectOpt.'</select></div>';
 	}
 
-	public function submit($name, $options = array(), $optionsDIV = array())
+	public function button($name, $options = array(), $optionsDIV = array())
 	{
 		if ( ! isset($options['type'])) 
 			$options['type'] = 'submit';
@@ -227,14 +237,14 @@ class FormBuilder {
 			$options['id'] = $name;
 		
 		if (! isset($optionsDIV['class']))
-			$optionsDIV['class']="form-group form-field col-xs-10";
+			$optionsDIV['class']="form-group form-field col-xs-12";
 		
 		if (! isset($options['class']))
 			$options['class']="btn btn-primary";
 		
 		return '<div class="'.$optionsDIV['class'].'"><button'.$this->attributes($options).'>'.$name.'</button></div>';
 	}
-	
+
 	public function textarea($name, $value = null, $options = array(), $optionsDIV = array()){
 
 		if ( isset($options['label']))
@@ -249,7 +259,7 @@ class FormBuilder {
 			$options['id'] = $name;
 
 		if (! isset($optionsDIV['class']))
-			$optionsDIV['class']="form-group form-field col-xs-10";
+			$optionsDIV['class']="form-group form-field col-xs-12";
 
 		if (! isset($options['class']))
 			$options['class']="form-control";
@@ -258,6 +268,49 @@ class FormBuilder {
 
 	}
 
+	public function inputSearch($name, $value = null, $options = array(), $optionsDIV = array()){
+		if ( ! isset($options['name']))
+			$options['name'] = $name;
+
+		if ( ! isset($options['id']))
+			$options['id'] = $name;
+
+		if ( ! isset($options['placeholder']))
+			$options['placeholder'] = $name;
+
+		if (! isset($options['class']))
+			$options['class']="form-control";
+
+		if (! isset($optionsDIV['class']))
+			$optionsDIV['class']="input-group";
+
+		if (! isset($optionsDIV['style']))
+			$options['style']="padding-left: 15px; padding-right: 15px; margin-bottom: 15px;";
+
+		if (! isset($options['data-callback-fn']))
+			$options['data-callback-fn']="";
+
+		if (! isset($options['data-url']))
+			$options['data-url']="";
+
+		if (! isset($options['data-title']))
+			$options['data-title']="";
+
+		if (! isset($options['data-callback-id']))
+			$options['data-callback-id']="";
+
+		if (! isset($options['data-callback-url']))
+			$options['data-callback-url']="";
+
+		if (! isset($options['data-field']))
+			$options['data-field']="";
+
+		$html='<div class="'.$optionsDIV['class'].'" style="'.$options['style'].'">';
+		$html.='<input type="text" id="'.$options['id'].'" name="'.$options['name'].'" class="'.$options['class'].'" placeholder="'.$options['placeholder'].'">';
+		$html.='<span class="input-group-btn object-action-search" data-url="'.$options['data-url'].'" data-title="'.$options['data-title'].'" data-callback-id="'.$options['data-callback-id'].'" data-callback-url="'.$options['data-callback-url'].'" data-callback-fn="'.$options['data-callback-fn'].'" data-field="'.$options['data-field'].'"><button class="btn btn-default" type="button">Chercher!</button></span>';
+		$html.='</div>';
+		return $html;
+	}
 	protected function formatLabel($name, $value)
 	{
 		return $value ?: ucwords(str_replace('_', ' ', $name));

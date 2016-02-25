@@ -43,7 +43,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/media/model/disk/view/disk.php"><i class="fa fa-database"></i> Disque dur</a></li>
+					<li><a href="/media/model/disk/view/disk.php"><i class="fa fa-hdd-o"></i> Disque dur</a></li>
 					<li><a href="/media/model/actor/view/actor.php"><i class="fa fa-user"></i> Acteur</a></li>
 					<li><a href="/media/model/content/view/content.php"><i class="fa fa-film"></i> Média</a></li>
 					<li>

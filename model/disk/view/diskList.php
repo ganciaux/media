@@ -1,3 +1,4 @@
+<?php panelOpen("Liste des disques dur"); ?>
 <table id="table-disk" class="table striped">
 	<thead>
 		<tr>
@@ -24,4 +25,5 @@
 		<?php } ?>
 	</tbody>
 </table>
+<?php panelClose(); ?>
 <script  type="text/javascript">dataTableSet("table-disk");</script>

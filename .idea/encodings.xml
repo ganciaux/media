@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/global/connection.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/global/download.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/global/footer.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/global/formBuilder.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/global/modal.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/global/session.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/global/utils.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/actor/actor.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/actor/controller/delete.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/actor/controller/export.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/content/content.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/content/view/content.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/controller/action.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/controller/delete.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/view/disk.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/view/diskContentManage.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/view/diskForm.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/view/diskList.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/view/diskManage.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/options/category/category.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/options/category/controller/action.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/options/category/controller/delete.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/options/content_type/content_type.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/options/language/language.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/options/quality/quality.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/css/media.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/media.js" charset="UTF-8" />
+  </component>
+</project>

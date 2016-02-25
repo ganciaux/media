@@ -6,37 +6,40 @@
 	$options = array();
 	
 	if (isset($_REQUEST['contentName']) && !empty($_REQUEST['contentName'])){
-            $options['name'] = $_REQUEST['contentName'];
+            $options['contentName'] = $_REQUEST['contentName'];
 	}
 
-	if (isset($_REQUEST['contentDisk'])){
-            $options['idDisk']  = $_REQUEST['contentDisk'];
+	if (isset($_REQUEST['contentDisk']) && $_REQUEST['contentDisk']!=-1){
+            $options['contentDisk']  = $_REQUEST['contentDisk'];
         }
 
-	if (isset($_REQUEST['contentType'])){
-            $options['idContentType']  = $_REQUEST['contentType'];
+	if (isset($_REQUEST['contentType']) && $_REQUEST['contentType']!=-1){
+            $options['contentType']  = $_REQUEST['contentType'];
 	}
 	
-	if (isset($_REQUEST['contentQuality'])){
-            $options['idQuality']  = $_REQUEST['contentQuality'];
+	if (isset($_REQUEST['contentQuality']) && $_REQUEST['contentQuality']!=-1){
+            $options['contentQuality']  = $_REQUEST['contentQuality'];
 	}
 
-	if (isset($_REQUEST['contentLanguage'])){
-            $options['idLanguage']  = $_REQUEST['contentLanguage'];
+	if (isset($_REQUEST['contentLanguage']) && $_REQUEST['contentLanguage']!=-1){
+            $options['contentLanguage']  = $_REQUEST['contentLanguage'];
 	}
 	
-	if (isset($_REQUEST['contentYear'])){
-            $options['year']  = $_REQUEST['contentYear'];
+	if (isset($_REQUEST['contentYear']) && $_REQUEST['contentYear']!=-1){
+            $options['contentYear']  = $_REQUEST['contentYear'];
 	}
         
-        if (isset($_REQUEST['idDisk'])){
-            $idDisk=$_REQUEST['idDisk'];
-        }else
-            $idDisk=0;
-           
-        $isModal=1;
-        
-        $data=content::getList(null,null,null,$options);
-        include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/content/view/contentList.php';
+	if (isset($_REQUEST['idDisk'])){
+		$options['idDisk']=$_REQUEST['idDisk'];
+	}
+
+	if (isset($_REQUEST['idActor'])){
+		$options['idActor']=$_REQUEST['idActor'];
+	}
+
+	$data=content::getList(null,null,null,$options);
+
+	include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/content/view/contentList.php';
+
 	
 	

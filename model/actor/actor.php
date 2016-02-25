@@ -1,10 +1,13 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/utils.php';
+
 class actor{
 	
 	public $idActor=0;
 	public $lastName='';
 	public $firstName='';
+    public $search='';
 
 	public function __construct($id=0){
 		if ($id>0)
@@ -15,19 +18,57 @@ class actor{
 		print ' idActor:' . $this->idActor;
 		print ' firstName' . $this->firstName;
 		print ' lastName:' . $this->lastName;
+        print ' search:' . $this->search;
 	}
 	
 	public function init(){
 		return
 			['idActor'=>0,
 			'firstName'=>'',
-			'lastName'=>''];
+			'lastName'=>'',
+            'search'=>''];
 	}
-	
-	static function getList($bOption=null,$bNone=null,$bAll=null){
+
+    static function exists($firstname,$lastname,$id){
+        global $bdd;
+        $search=setSearchString($firstname.$lastname);
+        $req = $bdd->prepare('select count(*) from actor where search=:search and idActor<>:id');
+        $req->bindParam(":search",$search, PDO::PARAM_STR);
+        $req->bindParam(":id", $id, PDO::PARAM_INT);
+        $result=$req->execute();
+        if ($result==true) {
+            $data = $req->fetch();
+            return $data[0];
+        }else{
+            return -1;
+        }
+    }
+
+	static function getList($bOption=null,$bNone=null,$bAll=null,$options=null){
 		global $bdd;
-		$req = $bdd->prepare('select idActor,firstName,lastName from actor order by firstName');
-		$result=$req->execute();
+        $sql="select idActor,firstName,lastName from actor";
+        $whereoption=" where idActor>0";
+        $search="";
+        $orderby=" order by firstName";
+
+        if (isset($options['firstName'])){
+            $search.=$options['firstName'];
+        }
+        if (isset($options['lastName'])){
+            $search.=$options['lastName'];
+        }
+        if (isset($options['search'])){
+            $search.=$options['search'];
+        }
+        $search=setSearchString($search);
+        $search.='%';
+
+
+        $whereoption.=" and search like :search";
+        $req = $bdd->prepare($sql.$whereoption.$orderby);
+        $req->bindParam(":search", $search, PDO::PARAM_STR);
+        $result=$req->execute();
+
 		if ($result==1){
 			$res = $req->fetchAll();
 			if (isset($bAll) && $bAll==true){
@@ -78,9 +119,11 @@ class actor{
 
 	function insert(){
 		global $bdd;
-		$req = $bdd->prepare('insert into actor (firstName,lastName) values (:firstname,:lastname)');
+        $search=setSearchString($this->firstName.$this->lastName);
+		$req = $bdd->prepare('insert into actor (firstName,lastName,search) values (:firstname,:lastname,:search)');
 		$req->bindParam(":firstname", $this->firstName, PDO::PARAM_STR);
 		$req->bindParam(":lastname", $this->lastName, PDO::PARAM_STR);
+        $req->bindParam(":search", $search, PDO::PARAM_STR);
 		$result=$req->execute();
 		$this->idActor = $bdd->lastInsertId();
 		return (int)$result;
@@ -88,19 +131,23 @@ class actor{
 
 	static function insertImport($firstName,$lastName){
 		global $bdd;
-		$req = $bdd->prepare('insert into actor (firstName,lastName) values (:firstname,:lastname)');
+        $search=setSearchString($firstName.$lastName);
+		$req = $bdd->prepare('insert into actor (firstName,lastName,search) values (:firstname,:lastname,:search)');
 		$req->bindParam(":firstname", $firstName, PDO::PARAM_STR);
 		$req->bindParam(":lastname", $lastName, PDO::PARAM_STR);
+        $req->bindParam(":search", $search, PDO::PARAM_STR);
 		$result=$req->execute();
 		return (int)$result;
 	}
 
 	function update(){
 		global $bdd;
-		$req = $bdd->prepare('update actor set firstName=:firstname, lastName=:lastname where idActor=:id');
+        $search=setSearchString($this->firstName.$this->lastName);
+		$req = $bdd->prepare('update actor set firstName=:firstname, lastName=:lastname, search=:search where idActor=:id');
 		$req->bindParam(":id", $this->idActor, PDO::PARAM_INT);
 		$req->bindParam(":firstname", $this->firstName, PDO::PARAM_STR);
 		$req->bindParam(":lastname", $this->lastName, PDO::PARAM_STR);
+        $req->bindParam(":search", $search, PDO::PARAM_STR);
 		$result=$req->execute();
 		return (int)$result;
 	}
@@ -119,9 +166,11 @@ class actor{
 				 */
 				if ( strlen($data[0])>0){
 					$pos = strpos($data[0], " ");
-					$lastName = strstr ($data[0]," ");
-					$firstName = substr ($data[0],0,$pos);
-					self::insertImport($firstName,$lastName);
+					$lastName = trim(strstr ($data[0]," "));
+					$firstName = trim(substr ($data[0],0,$pos));
+					if (strlen($firstName)>0 && strlen($lastName)>0) {
+                        self::insertImport($firstName, $lastName);
+                    }
 				}
 			}
 			fclose($handle);

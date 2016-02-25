@@ -29,7 +29,7 @@ class quality{
 			$res = $req->fetchAll();
 			if (isset($bOption) && $bOption==1){
 				if (isset($bAll) && $bAll==true){
-					$data['-1']='Tous';
+					$data['-1']='Toutes';
 				}
 				if (isset($bNone) && $bNone==true){
 					$data['0']='Aucune';

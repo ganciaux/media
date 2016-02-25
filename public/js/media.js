@@ -66,7 +66,7 @@ function dataTableSet(id){
         "language": {
             "url": "/media/public/json/French.json"
         },
-        "lengthMenu": [[50, 100, 250, -1],[50, 100, 250, "Tous"]]
+        "lengthMenu": [[50, 100, 250, -1],[50, 100, 250, "Tous"]],
         //paging: false
     });
 }
@@ -91,10 +91,43 @@ function dataTableRowAppend(id,data){
     }
 }
 
+function checkArray(myArray, myKey, myValue){
+    $.each(myArray, function(){
+        if($(this).myKey==myValue){
+            return true;
+        }
+    });
+    return false;
+}
 /*
  * json callback
  */
 var fnjsoncallback = new Array();
+
+fnjsoncallback['contentSetActor'] = function (idCallback,myObjectList){
+    var actorList = new Array();
+
+    $("#"+idCallback).find(".cbc-data").each(function(){
+        if ($(this).prop("checked")==true){
+            var myActor = new Object();
+            myActor["id"] = $(this).attr("id");
+            myActor["idActor"] = parseInt($(this).attr("data-id"));
+            actorList.push(myActor);
+        }
+    });
+
+    console.log(myObjectList);
+    console.log(actorList);
+
+    $.each(myObjectList, function (index,value) {
+       if (value.checked==1 && checkArray(actorList,'idActor',value.id)==false){
+           console.log($(this));
+           $('<div/>').append('<input type="checkbox" checked name="actorList[]" value="'+value.id+'" id="cbc-'+value.id+'" data-id="'+value.id+'"/>').append(' '+value.label).appendTo('#actorList');
+       }
+    });
+
+
+}
 
 fnjsoncallback['jsoncallback'] = function jsoncallback(data){
     //**debug console.log('jsoncallback:');
@@ -143,6 +176,24 @@ fnjsoncallback['action-store'] = function actionStore(data, idTable, id, action)
     });
 }
 
+function modelExport(element){
+    var data=$(this).closest('form').serializeArray();
+    var object=$(element).closest('form').data('object');
+    $.ajax({
+        url: "/media/model/"+object+"/controller/export.php",
+        type: "POST",
+        data: data,
+        success: function(data){
+            $("#"+object+"Export").html(data);
+            $("#export").get(0).click();
+            $("#export").remove();
+        },
+        error:function(jqxhr, textStatus, error) {
+            ajaxErrorLog(jqxhr, textStatus, error, '');
+        }
+    });
+}
+
 /*
  *
  */
@@ -185,10 +236,72 @@ function modalActionDelete() {
 }
 
 function modalActionSearch(){
-    console.log('modalActionSearch');
-    
+    var myObjectList = new Array();
+    $("#modal-search-body").find(".cbc-data").each(function(){
+        var myObject = new Object();
+        myObject["exists"]=parseInt($(this).attr("data-exists"));
+        myObject["id"]=parseInt($(this).attr("data-id"));
+        myObject["label"]=($(this).attr("data-label"));
+        if ($(this).prop("checked")==true)
+            myObject["checked"]=1;
+        else
+            myObject["checked"]=0;
+
+        myObjectList.push(myObject);
+    });
+
+    var idCallback = $('#modal-search-callback-id').val();
+    var urlCallback = $('#modal-search-callback-url').val();
+    var fnCallback = $('#modal-search-callback-fn').val();
+
+    if (typeof $("#url").val() != 'undefined' && $("#url").val().length>0) {
+        $.ajax({
+            url: $("#url").val(),
+            type: "POST",
+            data: {'objectList': JSON.stringify(myObjectList), '_token': $('meta[name=csrf-token]').attr('content')},
+            success: function (data) {
+                $('#modal-search').modal('hide');
+                $('#' + idCallback).html('');
+                if (typeof urlCallback != 'undefined' && urlCallback.length > 0) {
+                    modalActionSearchCallback(idCallback, urlCallback);
+                }
+                else if (typeof fnCallback != 'undefined' && fnCallback.length) {
+                    fnjsoncallback[fnCallback](idCallback, myObjectList);
+                }
+            },
+            error: function (jqxhr, textStatus, error) {
+                ajaxErrorLog(jqxhr, textStatus, error, '.modalActionSearch');
+            }
+        });
+    }
+    else{
+        $('#modal-search').modal('hide');
+
+        if (typeof urlCallback != 'undefined' && urlCallback.length > 0) {
+            modalActionSearchCallback(idCallback, urlCallback);
+        }
+        else if (typeof fnCallback != 'undefined' && fnCallback.length) {
+            fnjsoncallback[fnCallback](idCallback, myObjectList);
+        }
+    }
 }
 
+function modalActionSearchCallback(id,url){
+    $.ajax({
+        url: url,
+        type: "POST",
+        success: function(data){
+            $('#'+id).html(data);
+        },
+        error:function(jqxhr, textStatus, error) {
+            ajaxErrorLog(jqxhr, textStatus, error);
+        }
+    });
+}
+
+function modalActionFeedBack(){
+    console.log("modalActionFeedBack");
+}
 /*
  *
  */
@@ -210,12 +323,11 @@ $('document').ready(function() {
     $(document).on('click', '.object-action-delete', function() {
         var id=$(this).attr('id');
         $('#modal-object-delete').val(id);
-        $('#modal-body').html($(this).data('confirm'));
+        $('#modal-delete-body').html($(this).data('confirm'));
         $('#modal-delete').modal('show');
     });
 
     $('#modal-search').on('show.bs.modal', function () {
-        console.log("show.bs.modal");
         $(this).find('.modal-body').css({
             width:'auto', //probably not needed
             height:'auto', //probably not needed
@@ -223,8 +335,11 @@ $('document').ready(function() {
         });
     });
 
+    $('#modal-feedback').on('shown.bs.modal', function () {
+        $('#modal-feedback-btn').focus();
+    })
+
     $('#modal-search').on('show', function () {
-        console.log("show");
         $(this).find('.modal-body').css({
             width:'auto', //probably not needed
             height:'auto', //probably not needed
@@ -233,11 +348,30 @@ $('document').ready(function() {
     });
 
     $(document).on('click', '.object-action-search', function() {
-        console.log("object-action-search");
+        var id=$(this).data('id');
+        var title=$(this).data('title');
+        var field=$(this).data('field');
+        var datafield=new Object();
+        $('#modal-search-object').val(id);
+        $('#modal-search-callback-id').val($(this).data('callback-id'));
+        $('#modal-search-callback-url').val($(this).data('callback-url'));
+        $('#modal-search-callback-fn').val($(this).data('callback-fn'));
+        if (typeof title != 'undefined') {
+            $('#modal-search-title').html(title);
+        }
+        else{
+            $('#modal-search-title').html("Recherche");
+        }
+        if (typeof field != 'undefined') {
+            datafield[field]=$('#'+field).val();
+        }
+        datafield['isModal']=1;
+        datafield['_token']=$('meta[name=csrf-token]').attr('content');
+
         $.ajax({
             url: $(this).data('url'),
             type: "POST",
-            data: {'isModal':1,'_token': $('meta[name=csrf-token]').attr('content')},
+            data: datafield,
             success: function(data){
                 $('#modal-search-body').html(data);
                 $('#modal-search').modal('show');
@@ -284,7 +418,6 @@ $('document').ready(function() {
 					object = form.data('object'),
 					action = form.data('action'),
                                         formdataType = form.attr('data-type');
-console.log(formdataType);
 			// Check for file inputs.
 			if (form.find('[type=file]').length) {
 
@@ -311,7 +444,8 @@ console.log(formdataType);
 			// If no file input found, do not use FormData object (better browser compatibility).
 			else {
 					var data        = form.serialize(),
-							contentType = 'application/x-www-form-urlencoded; charset=UTF-8';
+                    contentType = 'application/x-www-form-urlencoded; charset=UTF-8';
+                    console.log(data);
 			}
 
 			// Please wait.
@@ -336,10 +470,10 @@ console.log(formdataType);
 
 			// Response.
 			}).always(function(response, status) {
-     
+
 					// Reset errors.
 					resetModalFormErrors();
-					
+
 					// Check for errors.
 					if (response.status == 422 && formdataType=='json') {
 							var errors = $.parseJSON(response.responseText);
@@ -352,27 +486,22 @@ console.log(formdataType);
                                 //$('#'+field).closest('div').addClass('has-error').append('<p class="help-block">'+message+'</p>');
 							});
 
-							// Reset submit.
-							if (submit.is('button')) {
-									submit.html(submitOriginal);
-							} else if (submit.is('input')) {
-									submit.val(submitOriginal);
-							}
-
 					// If successful, reload.
 					} else if (formdataType=='json') {
 							//location.reload();
-							if (submit.is('button')) {
-									submit.html(submitOriginal);
-							} else if (submit.is('input')) {
-									submit.val(submitOriginal);
-							}
 							closeModal(form.attr('data-modal-id'));
 
 							console.log(response.callback);
-							
+
+                            if (typeof response.message != 'undefined' ){
+                                //$("h1").append();
+                                $('<div class="alert media-alert alert-success "><a class="close" data-dismiss="alert">×</a>'+response.message+'</div>').insertAfter('.media-page-header').delay(2000).fadeOut();
+                                //$("#modal-feedback-body").html('<div class="has-success"><p class="help-block">'+response.message+'</p></div>');
+                                //$("#modal-feedback").modal('show');
+                            }
+
 							if (typeof response.url != 'undefined'){
-									window.location.href = response.url;
+									//window.location.href = response.url;
 							}
 							else if (typeof response.callback != 'undefined'){
 									console.log('form.bootstrap-modal-form: callback');
@@ -380,8 +509,16 @@ console.log(formdataType);
 									;//fnjsoncallback[response.callback](response,'table-'+object,response.id, action);
 							}
 					}
-                                        else
-                                            $('#contentSearchList').html(response);
+                    else {
+                        $('#' + object + 'SearchList').html(response);
+                    }
+
+                    // Reset submit.
+                    if (submit.is('button')) {
+                        submit.html(submitOriginal);
+                    } else if (submit.is('input')) {
+                        submit.val(submitOriginal);
+                    }
 			});
 	});
 

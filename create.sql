@@ -8,7 +8,8 @@ create table disk(
 create table actor(
  idActor int AUTO_INCREMENT,
  firstName varchar(64),
- lastName varchar(64), primary key(idActor));
+ lastName varchar(64),
+ search varchar(128), primary key(idActor));
  
 create table content_type(
  idContentType int AUTO_INCREMENT,

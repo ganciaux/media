@@ -68,3 +68,34 @@ function setSearchString($string){
 function debugPdo($sth){
     $sth->debugDumpParams();
 }
+
+function panelOpen($title,$action=null){
+    print '<div class="panel panel-default panel-media">';
+    if (isset($title) && strlen($title)>0) {
+        print '<div class="panel-heading">';
+        print '<h3 class="panel-title panel-media-title">' . htmlspecialchars($title);
+        if (isset($action)) {
+            print ' '.$action;
+        }
+        print '</h3>';
+        print '</div>';
+    }
+    print '<div class="panel-body">';
+}
+
+function panelClose(){
+    print "</div></div>";
+}
+
+function getYearRange($none=null,$all=null){
+    $array=array_combine(range(date("Y"),1950,-1),range(date("Y"),1950,-1));
+
+    if (isset($none)) {
+        $array=array('0' => 'Aucune')+$array;
+    }
+    if (isset($all)) {
+        $array=array('-1' => 'Toutes')+$array;
+    }
+
+    return $array;
+}

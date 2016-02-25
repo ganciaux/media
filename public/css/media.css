@@ -1,3 +1,7 @@
+.user-action-add{
+    cursor:pointer;
+}
+
 .user-action-edit {
   cursor: pointer;
 }
@@ -17,6 +21,7 @@
 
 .modal-search{
     width: 80%;
+    min-width: 900px!important;;
 }
 
 .shown {
@@ -33,4 +38,52 @@ tr.even:hover td{
 
 .form-field-margin-bottom{
     margin-bottom: 15px;
+}
+
+.panel-media{
+    min-width: 800px;
+}
+
+.panel-media-title{
+    font-weight: bold;
+}
+
+.media-page-header {
+    background-color: #fff;
+    border-bottom: 1px solid #d2d2d2;
+    box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24);
+    margin-top: 5px; margin-bottom: 5px;
+    margin-left: -40px;
+    margin-right: -40px;
+    padding: 0 29px;
+}
+
+.media-breadcrumb {
+    background-color: #fff;
+    border-radius: 4px;
+    list-style: outside none none;
+    margin-bottom: 0px;
+    padding: 8px 15px;
+}
+
+.media-btn{
+    margin-right: 5px;
+}
+
+.media-alert {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    padding: 15px;
+}
+
+.media-separator{
+    background-color: #fff;
+    border-bottom: 1px solid #d2d2d2;
+    box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24);
+    margin-top: 5px; margin-bottom: 20px;
+    margin-left: -40px;
+    margin-right: -40px;
+    padding: 0 29px;
 }
