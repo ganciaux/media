@@ -11,13 +11,18 @@
     <file url="file://$PROJECT_DIR$/model/actor/actor.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/actor/controller/delete.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/actor/controller/export.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/actor/view/actorContentListLine.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/content/content.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/content/view/content.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/contentType/controller/delete.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/contentType/view/contentType.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/disk/controller/action.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/disk/controller/delete.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/controller/export.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/controller/search.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/disk/view/disk.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/disk/view/diskContentManage.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/model/disk/view/diskForm.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/disk/view/diskFormSearch.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/disk/view/diskList.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/disk/view/diskManage.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/options/category/category.php" charset="UTF-8" />

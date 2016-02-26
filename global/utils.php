@@ -99,3 +99,111 @@ function getYearRange($none=null,$all=null){
 
     return $array;
 }
+
+
+function getServerPublicPath(){
+    return $_SERVER['DOCUMENT_ROOT'].'/media/public';
+}
+
+function getPublicPath(){
+    return '/media/public';
+}
+
+function uploadFile($file){
+    $result=array();
+    $separator='.';
+    $status=1;
+    $file_name = $file['name'];
+    $file_size = $file['size'];
+    $file_tmp = $file['tmp_name'];
+    $file_type = $file['type'];
+    $file_error = $file['error'];
+    $file_details=explode($separator,$file_name);
+    $file_ext=strtolower(end($file_details));
+
+    $expensions=array("jpeg","jpg","png");
+
+    if(in_array($file_ext,$expensions)=== false){
+        $status=422;
+        $result['error']="Extension non permise, choisir un fichier JPEG, JPG ou PNG";
+    }
+
+    if($file_size > 2097152) {
+        $status=422;
+        $result['error']='Fichier supérieur à 2 MB';
+    }
+
+    $result['status']=$status;
+    $result['name']=$file_tmp;
+    $result['ext']=$file_ext;
+
+    return $result;
+}
+
+function getFilePath($id,$object){
+    $dir="/img/" . $object . "/" . ceil($id / 1000);
+    $absolutedir=getServerPublicPath().'/'.$dir;
+    if(!file_exists($absolutedir)){
+        mkdir($absolutedir, 0777, true);
+    }
+    return  $dir;
+}
+
+function resizeFile($filepath,$filename,$percent){
+    // Content type
+    header('Content-Type: image/jpeg');
+
+    // Calcul des nouvelles dimensions
+    list($width, $height) = getimagesize($filepath.'/'.$filename);
+    $newwidth = $width * $percent;
+    $newheight = $height * $percent;
+
+    // Chargement
+    $thumb = imagecreatetruecolor($newwidth, $newheight);
+    $source = imagecreatefromjpeg($filepath.'/'.$filename);
+
+    // Redimensionnement
+    $result=imagecopyresized($thumb, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+    imagejpeg($thumb,$filepath.'/small_'.$filename);
+
+    return $result;
+}
+
+function fileUpload($id,$object,$ext,$uploadname,$bresize){
+    $resultUpload=array();
+    $path=getFilePath($id,$object);
+    $absolutepath=getServerPublicPath().$path;
+    $filename=$id.'.'.$ext;
+
+    $result=move_uploaded_file($uploadname,$absolutepath.'/'.$filename);
+    if (isset($bresize) && $bresize==true && $result==true) {
+        $result=resizeFile($absolutepath, $filename, 0.5);
+    }
+    $resultUpload['result']=$result;
+    $resultUpload['path']=$path;
+    $resultUpload['absolutepath']=$absolutepath;
+    $resultUpload['filename']=$filename;
+    $resultUpload['image']=getPublicPath().$path.'/'.$filename;
+
+    return $resultUpload;
+}
+
+function imageInsert($pathName,$fileName){
+    global $bdd;
+    $req = $bdd->prepare('insert into image (pathName,fileName) values (:pathName,:fileName)');
+    $req->bindParam(":pathName", $pathName, PDO::PARAM_STR);
+    $req->bindParam(":fileName", $fileName, PDO::PARAM_STR);
+    $result=$req->execute();
+    return $bdd->lastInsertId();
+}
+
+function imageUpdate($id,$pathName,$fileName){
+    global $bdd;
+    $req = $bdd->prepare('update image set pathName=:pathName, fileName=:fileName )');
+    $req->bindParam(":pathName", $pathName, PDO::PARAM_STR);
+    $req->bindParam(":fileName", $fileName, PDO::PARAM_STR);
+    $req->bindParam(":id", $id, PDO::PARAM_INT);
+    $result=$req->execute();
+    return (int)$result;
+}

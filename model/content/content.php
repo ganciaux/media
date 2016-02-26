@@ -2,22 +2,22 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/utils.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/disk/disk.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/options/content_type/content_type.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/options/language/language.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/options/category/category.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/options/quality/quality.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/contentType/contentType.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/language/language.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/category/category.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/quality/quality.php';
 
 /*
 $disks=disk::getList(1,true);
 $categories=category::getList(1,true);
 $languages=language::getList(1,true);
 $qualities=quality::getList(1,true);
-$content_types=content_type::getList(1,true);
+$contentTypes=contentType::getList(1,true);
 */
 
 //var_dump($disks);
 //var_dump($languages);
-//var_dump($content_types);
+//var_dump($contentTypes);
 //var_dump($qualities);
 //var_dump($categories);
 
@@ -36,7 +36,7 @@ class content{
 	public static $categories;
 	public static $languages;
 	public static $qualities;
-	public static $content_types;
+	public static $contentTypes;
 
 	public function __construct($id=0)	{
 		if ($id>0)
@@ -59,7 +59,7 @@ class content{
 		self::$categories=category::getList($bOption,$bNone,$bAll);
 		self::$languages=language::getList($bOption,$bNone,$bAll);
 		self::$qualities=quality::getList($bOption,$bNone,$bAll);
-		self::$content_types=content_type::getList($bOption,$bNone,$bAll);
+		self::$contentTypes=contentType::getList($bOption,$bNone,$bAll);
 	}
 
 	static function setDisk($idDisk,$idContent){
@@ -78,7 +78,7 @@ class content{
 		return (int)$req->execute();
 	}
 
-	static function deleteActor($idActor=null,$idContent=null){
+	static function deleteContentActor($idActor=null,$idContent=null){
 		global $bdd;
 		$whereoption='';
 
@@ -279,7 +279,7 @@ class content{
 		$result=$req->execute();
 
 		if ($result==true){
-			$result=self::deleteActor(null,$id);
+			$result=self::deleteContentActor(null,$id);
 		}
 
 		return (int)$result;
@@ -339,7 +339,7 @@ class content{
 		$result=(int)$req->execute();
 
 		if ($result==true){
-			$result=self::deleteActor(null,$this->idContent);
+			$result=self::deleteContentActor(null,$this->idContent);
 			if ($result==true){
 				foreach ($this->actorList as $actor){
 					self::setActor($actor, $this->idContent);

@@ -30,7 +30,7 @@
     <script src="/media/public/js/media.js"></script>
   </head>
   <body role="document">
-	<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+	<nav class="navbar navbar-inverse" style="margin-bottom: 0px;border-radius: 0px;">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -49,10 +49,10 @@
 					<li>
 						<a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#"> Options<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-								<li><a href="/media/model/options/type/view/type.php"><i class="fa fa-file-video-o"></i> Type de média</a></li>
-								<li><a href="/media/model/options/quality/view/options/quality.php"><i class="fa fa-desktop"></i> Qualité</a></li>
-								<li><a href="/media/model/options/category/view/category.php"><i class="fa fa-tags"></i> Catégorie</a></li>
-								<li><a href="/media/model/options/language/view/language.php"><i class="fa fa-microphone"></i> Language</a></li>
+								<li><a href="/media/model/contentType/view/contentType.php"><i class="fa fa-file-video-o"></i> Type de média</a></li>
+								<li><a href="/media/model/quality/view/quality.php"><i class="fa fa-desktop"></i> Qualité</a></li>
+								<li><a href="/media/model/category/view/category.php"><i class="fa fa-tags"></i> Catégorie</a></li>
+								<li><a href="/media/model/language/view/language.php"><i class="fa fa-microphone"></i> Language</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -60,7 +60,7 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container-fluid">
+	<div class="container-fluid" style="margin-left: 15px; margin-right: 15px;">
 	<?php
 		require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/connection.php';
 		require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/utils.php';

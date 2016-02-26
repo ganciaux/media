@@ -3,12 +3,12 @@
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/disk/disk.php'; 
 
 	$result=1;
-	$message="Success";
+	$message="";
 	$errors = array();
 	
 	if (isset($_REQUEST['idDisk'])){
 		disk::delete($_REQUEST['idDisk']);
-		$message="Success";
+		$message="Le disque dur a bien été supprimé";
 	}else{
 		$result=0;
 		$message="Impossible de supprimer le disque dur";

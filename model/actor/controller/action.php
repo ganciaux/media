@@ -3,14 +3,15 @@
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/actor/actor.php';
 
 	$result=1;
+	$bUpload=0;
 	$status=1;
 	$actor=new actor();
 	$message="";
 	$callback='';
 	$url='';
 	$errors = array();
-	
-	if (isset($_REQUEST['idActor'])&& $_REQUEST['idActor']>0){
+
+	if (isset($_REQUEST['idActor']) && $_REQUEST['idActor']>0){
 		$actor->idActor = $_REQUEST['idActor'];
 		$message="Mise à jour réussie";
 	}else{
@@ -31,7 +32,16 @@
 		$status=422;
 		$errors['actorLastName']="Nom manquant";
 	}
-	
+
+	if (isset($_FILES['actorFile'])) {
+		$bUpload=1;
+		$uploadFile = uploadFile($_FILES['actorFile']);
+		$status=$uploadFile['status'];
+		if (isset($uploadFile['error'])==true){
+			$errors['actorFile']=$uploadFile['error'];
+		}
+	}
+
 	if ($status==1){
 		if (actor::exists($_REQUEST['actorFirstName'],$_REQUEST['actorLastName'],$actor->idActor)==0) {
 			if ($actor->idActor == 0) {
@@ -40,6 +50,13 @@
 			} else {
 				$result = $actor->update();
 				$url = "/media/model/actor/view/actor.php";
+			}
+			if ($result==true && $bUpload==1){
+				$resultUpload=fileUpload($actor->idActor,'actor',$uploadFile['ext'],$uploadFile['name'],true);
+
+				if ($result==true){
+					$result=actor::setImage($actor->idActor,$resultUpload['image']);
+				}
 			}
 		}else{
 			$status=422;

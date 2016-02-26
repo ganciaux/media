@@ -37,7 +37,7 @@ print $form->inputForm("text", "contentName", $content->name, ['label'=>'Nom','p
 print $form->selectForm("contentDisk", $content->idDisk,content::$disks,['label'=>'Disque dur'],['class'=>"form-field form-field-margin-bottom col-xs-4"]);
 print '</div>';
 print '<div>';
-print $form->selectForm("contentType", $content->idContentType,content::$content_types,['label'=>'Type'],['class'=>"form-field form-field-margin-bottom col-xs-5"]);
+print $form->selectForm("contentType", $content->idContentType,content::$contentTypes,['label'=>'Type'],['class'=>"form-field form-field-margin-bottom col-xs-5"]);
 print $form->selectForm("contentQuality", $content->idQuality,content::$qualities,['label'=>'Qualité'],['class'=>"form-field form-field-margin-bottom col-xs-3"]);
 print $form->selectForm("contentLanguage", $content->idLanguage,content::$languages,['label'=>'Language'],['class'=>"form-field form-field-margin-bottom col-xs-2"]);
 print $form->selectForm("contentYear", $content->year,getYearRange(true,null),['label'=>'Année'],['class'=>"form-field form-field-margin-bottom col-xs-2"]);
@@ -45,7 +45,7 @@ print '</div>';
 print '<label style="padding-left: 15px;">Acteur</label>';
 print $form->inputSearch("actorName",null,['data-url'=>'/media/model/actor/controller/search.php?idRefContent='.$id,
 	 										'data-field'=>'actorName',
-											'data-callback-id'=>"actorList",
+											'data-callback-id'=>"table-actor-content",
 											'data-callback-fn'=>'contentSetActor',
 											'data-title'=>'Sélection acteurs']);
 print '<div id="actorList" class="col-xs-12" style="margin-bottom: 15px;">';

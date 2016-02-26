@@ -15,7 +15,7 @@
 		$content->actorList=$_REQUEST['actorList'];
 	}
 
-	if (isset($_REQUEST['idContent'])){
+	if (isset($_REQUEST['idContent']) && $_REQUEST['idContent']>0){
 		$content->idContent = $_REQUEST['idContent'];
 		$message="Mise à jour réussie";
 	}else{

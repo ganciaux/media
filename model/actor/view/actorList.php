@@ -19,7 +19,10 @@
 	<tbody>
 		<?php foreach($data as $d) { ?>
 			<tr id="table-actor_tr-<?php echo $d['idActor'] ?>">
-				<td><?php print htmlspecialchars($d['lastName']); ?></td>
+				<td>
+					<?php print htmlspecialchars($d['lastName']); ?>
+					<img src="<?php //print $d['image']; ?>" alt="">
+				</td>
 				<td><?php print htmlspecialchars($d['firstName']); ?></td>
 				<td>
 					<?php if($isModal==0){ ?>
@@ -31,7 +34,7 @@
 								$exists = content::diskExists($_REQUEST['idRefContent'], $d['idActor']);
 							}
 					?>
-					<input id="cbc-<?php echo $d['idActor'] ?>" data-label="<?php echo $d['lastName'] ?> <?php echo $d['firstName'] ?>" data-id="<?php echo $d['idActor'] ?>" <?php if($exists==1){print 'checked';}?> type="checkbox" data-exists="<?php print $exists;?>" class="cbc-data">
+					<input id="cbc-<?php echo $d['idActor'] ?>" data-label="<?php print $d['lastName']. ' ' . $d['firstName'] ?>" data-id="<?php echo $d['idActor'] ?>" <?php if($exists==1){print 'checked';}?> type="checkbox" data-exists="<?php print $exists;?>" class="cbc-data">
 					<?php  } ?>
 				</td>
 			</tr>

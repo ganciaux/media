@@ -9,11 +9,13 @@ create table actor(
  idActor int AUTO_INCREMENT,
  firstName varchar(64),
  lastName varchar(64),
- search varchar(128), primary key(idActor));
+ search varchar(128), 
+ idImage int, primary key(idActor));
  
 create table content_type(
  idContentType int AUTO_INCREMENT,
- name varchar(64), primary key(idContentType));
+ name varchar(64), 
+ search varchar(32), primary key(idContentType));
 
 insert into content_type(name) values ('Film');
 insert into content_type(name) values ('Série');
@@ -22,7 +24,8 @@ insert into content_type(name) values ('Manga');
 
 create table category(
  idCategory int AUTO_INCREMENT,
- name varchar(32), primary key(idCategory));
+ name varchar(32), 
+ search varchar(32), primary key(idCategory));
 
 insert into category(name) values ('Action');
 insert into category(name) values ('Horreur');
@@ -30,7 +33,8 @@ insert into category(name) values ('Policier');
  
 create table quality(
  idQuality int AUTO_INCREMENT,
- name varchar(32), primary key(idQuality));
+ name varchar(32), 
+ search varchar(32), primary key(idQuality));
 
 insert into quality(name) values ('HD 720p');
 insert into quality(name) values ('HD 1080p');
@@ -42,7 +46,8 @@ insert into quality(name) values ('Refaire');
 
 create table language(
  idLanguage int AUTO_INCREMENT,
- name varchar(32), primary key(idLanguage));
+ name varchar(32),
+ search varchar(32), primary key(idLanguage));
 
 insert into language(name) values ('Vo');
 insert into language(name) values ('Vostfr');
@@ -62,8 +67,15 @@ create table content(
  year int,
  idDisk int,
  idLanguage int,
- idQuality int, primary key(idContent) );
+ idQuality int,
+ idImage int, primary key(idContent) );
 
+ create table image(
+ idImage int AUTO_INCREMENT,
+ pathName varchar(128),
+ fileName varchar(128),
+ idImage int, primary key(idImage) );
+ 
 create table content_bundle(
  idContentBundle int AUTO_INCREMENT,
  idBundle int,
@@ -78,3 +90,12 @@ create table content_actor(
  idContentCategory int AUTO_INCREMENT,
  idCategory int,
  idContent int,primary key(idContentCategory));
+ 
+idActor : content_actor
+idCategory : content_category
+idContent : content_actor
+idDisk : content, 
+idContentType :  content
+
+idQuality : content
+idLanguage : content_actor

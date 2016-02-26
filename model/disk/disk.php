@@ -30,9 +30,30 @@ class disk{
 			'comment'=>''];
 	}
 
-	static function getList($bOption=null,$bNone=null,$bAll=null){
+	static function getList($bOption=null,$bNone=null,$bAll=null,$options=array()){
 		global $bdd;
-		$req=$bdd->prepare('select idDisk,name,label,size,comment from disk order by name');
+		$sql="select idDisk,name,label,size,comment from disk";
+		$whereoption=' where idDisk>0';
+		$orderby=" order by name, label";
+
+		if (isset($options['diskName'])){
+			$whereoption.=" and name like :diskName";
+		}
+		if (isset($options['diskLabel'])){
+			$whereoption.=" and label like :diskLabel";
+		}
+
+		$req=$bdd->prepare($sql.$whereoption.$orderby);
+
+		if (isset($options['diskName'])){
+			$searchName=$options['diskName'].'%';
+			$req->bindParam(":diskName", $searchName, PDO::PARAM_STR);
+		}
+		if (isset($options['diskLabel'])){
+			$searchLabel=$options['diskLabel'].'%';
+			$req->bindParam(":diskLabel", $searchLabel, PDO::PARAM_STR);
+		}
+
 		$result=$req->execute();
 		if ($result==1){
 			$res = $req->fetchAll();

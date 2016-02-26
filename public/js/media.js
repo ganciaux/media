@@ -92,12 +92,14 @@ function dataTableRowAppend(id,data){
 }
 
 function checkArray(myArray, myKey, myValue){
-    $.each(myArray, function(){
-        if($(this).myKey==myValue){
-            return true;
+    var bFound=false;
+    $.each(myArray, function(index,value){
+        if(value[myKey]==myValue){
+            bFound=true;
+            return bFound;
         }
     });
-    return false;
+    return bFound;
 }
 /*
  * json callback
@@ -107,25 +109,29 @@ var fnjsoncallback = new Array();
 fnjsoncallback['contentSetActor'] = function (idCallback,myObjectList){
     var actorList = new Array();
 
-    $("#"+idCallback).find(".cbc-data").each(function(){
-        if ($(this).prop("checked")==true){
-            var myActor = new Object();
-            myActor["id"] = $(this).attr("id");
-            myActor["idActor"] = parseInt($(this).attr("data-id"));
-            actorList.push(myActor);
-        }
+    $("#"+idCallback).find(".object-data").each(function(){
+        var myActor = new Object();
+        myActor["id"] = $(this).data("id");
+        myActor["idActor"] = parseInt($(this).val());
+        actorList.push(myActor);
     });
-
-    console.log(myObjectList);
-    console.log(actorList);
 
     $.each(myObjectList, function (index,value) {
-       if (value.checked==1 && checkArray(actorList,'idActor',value.id)==false){
-           console.log($(this));
-           $('<div/>').append('<input type="checkbox" checked name="actorList[]" value="'+value.id+'" id="cbc-'+value.id+'" data-id="'+value.id+'"/>').append(' '+value.label).appendTo('#actorList');
+        if (value.checked==1 && checkArray(actorList,'idActor',value.id)==false){
+            value['idActor']=value.id;
+            $.ajax({
+                url: "/media/model/actor/view/actorContentListLine.php",
+                type: "POST",
+                data: {'d':JSON.stringify(value)},
+                success: function(data){
+                    $('#'+idCallback+' tbody').append(data);
+                },
+                error:function(jqxhr, textStatus, error) {
+                    ajaxErrorLog(jqxhr, textStatus, error, '.action-object');
+                }
+            });
        }
     });
-
 
 }
 
@@ -237,17 +243,15 @@ function modalActionDelete() {
 
 function modalActionSearch(){
     var myObjectList = new Array();
-    $("#modal-search-body").find(".cbc-data").each(function(){
+    $("#modal-search-body").find(".cbc-data").each(function() {
         var myObject = new Object();
-        myObject["exists"]=parseInt($(this).attr("data-exists"));
-        myObject["id"]=parseInt($(this).attr("data-id"));
-        myObject["label"]=($(this).attr("data-label"));
-        if ($(this).prop("checked")==true)
-            myObject["checked"]=1;
-        else
-            myObject["checked"]=0;
-
-        myObjectList.push(myObject);
+        myObject["exists"] = parseInt($(this).attr("data-exists"));
+        myObject["id"] = parseInt($(this).attr("data-id"));
+        myObject["label"] = ($(this).attr("data-label"));
+        if ($(this).prop("checked") == true) {
+            myObject["checked"] = 1;
+            myObjectList.push(myObject);
+        }
     });
 
     var idCallback = $('#modal-search-callback-id').val();
@@ -325,6 +329,10 @@ $('document').ready(function() {
         $('#modal-object-delete').val(id);
         $('#modal-delete-body').html($(this).data('confirm'));
         $('#modal-delete').modal('show');
+    });
+
+    $(document).on('click', '.object-action-list-delete', function() {
+        $("#"+$(this).data('id')).remove();
     });
 
     $('#modal-search').on('show.bs.modal', function () {

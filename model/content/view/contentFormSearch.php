@@ -30,7 +30,7 @@ print $form->selectForm("contentDisk", -1,content::$disks,['label'=>'Disque dur'
 print $form->hidden('isModal', $isModal);
 print '</div>';
 print '<div>';
-print $form->selectForm("contentType", -1,content::$content_types,['label'=>'Type'],['class'=>"form-field form-field-margin-bottom col-xs-5"]);
+print $form->selectForm("contentType", -1,content::$contentTypes,['label'=>'Type'],['class'=>"form-field form-field-margin-bottom col-xs-5"]);
 print $form->selectForm("contentQuality", -1,content::$qualities,['label'=>'Qualité'],['class'=>"form-field form-field-margin-bottom col-xs-3"]);
 print $form->selectForm("contentLanguage", -1,content::$languages,['label'=>'Language'],['class'=>"form-field form-field-margin-bottom col-xs-2"]);
 print $form->selectForm("contentYear", -1, getYearRange(true,true),['label'=>'Année'],['class'=>"form-field form-field-margin-bottom col-xs-2"]);

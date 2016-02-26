@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . 'media/global/connection.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . 'media/model/actor/actor.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/connection.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/actor/actor.php';
 
 $result=1;
 $options = array();
@@ -15,7 +15,7 @@ if (isset($_REQUEST['actorLasttName']) && !empty($_REQUEST['actorLasttName'])){
 
 $filename='actorExport.csv';
 $data=actor::getList(null,null,null,$options);
-$file=$_SERVER['DOCUMENT_ROOT'] . 'media/public/files/'.$filename;
+$file=$_SERVER['DOCUMENT_ROOT'] . '/media/public/files/'.$filename;
 $fp = fopen($file, 'w');
 if ($fp!=null) {
 	foreach ($data as $d) {

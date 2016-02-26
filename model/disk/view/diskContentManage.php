@@ -38,6 +38,7 @@ panelOpen("Paramètre du disque dur",$action);
 <?php
 	include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/content/content.php';
 	$data = content::getList(null,null,null,['idDisk'=>$id]);
+	$idRefDisk=$id;
 	include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/content/view/contentList.php';
 ?>
 </div>

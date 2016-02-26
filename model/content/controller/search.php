@@ -1,5 +1,5 @@
 <?php 
-	require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/connection.php'; 
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/connection.php';
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/content/content.php'; 
 
 	$result=1;
@@ -31,6 +31,11 @@
         
 	if (isset($_REQUEST['idDisk'])){
 		$options['idDisk']=$_REQUEST['idDisk'];
+		$idRefDisk=$_REQUEST['idDisk'];
+	}
+
+	if (isset($_REQUEST['idRefDisk'])){
+		$idRefDisk=$_REQUEST['idRefDisk'];
 	}
 
 	if (isset($_REQUEST['idActor'])){

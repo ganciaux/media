@@ -12,7 +12,7 @@
 <?php 
 	include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/disk/disk.php';
 	$data = disk::getList();
-	include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/disk/view/diskList.php';
+	include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/disk/view/diskFormSearch.php';
 ?>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/footer.php'; ?>

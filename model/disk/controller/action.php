@@ -5,12 +5,11 @@
 	$result=1;
 	$status=1;
 	$disk=new disk();
-	$message="Success";
-	$callback='';
-	$url='';
+	$message="";
+	$url="";
 	$errors = array();
 	
-	if (isset($_REQUEST['idDisk'])){
+	if (isset($_REQUEST['idDisk'])  && $_REQUEST['idDisk']>0){
 		$disk->idDisk = $_REQUEST['idDisk'];
 		$message="Mise à jour réussie";
 	}else{

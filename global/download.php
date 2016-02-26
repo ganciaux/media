@@ -14,7 +14,7 @@ if(!$filename){
 	echo $err;
 } else {
 	// define the path to your download folder plus assign the file name
-	$path = $_SERVER['DOCUMENT_ROOT'].'media/public/files/'.$filename;
+	$path = $_SERVER['DOCUMENT_ROOT'].'/media/public/files/'.$filename;
 	// check that file exists and is readable
 	if (file_exists($path) && is_readable($path)) {
 		// get the file size and send the http headers

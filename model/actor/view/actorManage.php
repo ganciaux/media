@@ -28,11 +28,13 @@ $actor = new actor($id);
 $form = new formBuilder();
 
 panelOpen("Paramètres de l'acteur");
-print $form->open(['name'=>'actorForm', 'method'=>'post', 'action'=>'/media/model/actor/controller/action.php']);
+print $form->open(['files'=>true, 'name'=>'actorForm', 'method'=>'post', 'action'=>'/media/model/actor/controller/action.php']);
 print $form->hidden('idActor', $id);
 print '<div class="col-xs-12">';
 print $form->inputForm("text", "actorLastName", $actor->lastName, ['label'=>'Nom','placeholder'=>'nom']);
 print $form->inputForm("text", "actorFirstName", $actor->firstName, ['label'=>'Prénom','placeholder'=>'prénom']);
+
+print $form->inputForm("file", "actorFile", null, ['class'=>'']);
 print '</div>';
 print '<div class="col-xs-12" style="display: flex;">';
 print $form->button("Valider",null,['class'=>"media-btn"]);

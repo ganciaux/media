@@ -3,12 +3,12 @@
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/content/content.php'; 
 
 	$result=1;
-	$message="Success";
+	$message="";
 	$errors = array();
 	
 	if (isset($_REQUEST['idContent'])){
 		content::delete($_REQUEST['idContent']);
-		$message="Success";
+		$message="Le média a bien été supprimé";
 	}else{
 		$result=0;
 		$message="Impossible de supprimer le média";

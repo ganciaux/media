@@ -14,7 +14,9 @@
 		<tr>
 			<th>Nom</th>
 			<th>Type</th>
-			<th>Disque dur</th>
+			<?php if(isset($idRefDisk)==0){ ?>
+				<th>Disque dur</th>
+			<?php } ?>
 			<?php if($isModal==0){ ?>
 				<th>Année</th>
 				<th>Language</th>
@@ -27,8 +29,10 @@
 		<?php foreach($data as $d) { ?>
 			<tr id="table-content_tr-<?php echo $d['idContent'] ?>">
 				<td><?php print htmlspecialchars($d['name']); ?></td>
-				<td><?php print getValue(content::$content_types,$d['idContentType']); ?></td>
-				<td><?php print getValue(content::$disks,$d['idDisk']); ?></td>
+				<td><?php print getValue(content::$contentTypes,$d['idContentType']); ?></td>
+				<?php if(isset($idRefDisk)==0){ ?>
+					<td><?php print getValue(content::$disks,$d['idDisk']); ?></td>
+				<?php } ?>
 				<?php if($isModal==0){ ?>
 					<td><?php print $d['year']; ?></td>
 					<td><?php print getValue(content::$languages,$d['idLanguage']); ?></td>

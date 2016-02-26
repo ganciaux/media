@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . 'media/global/connection.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . 'media/model/content/content.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/connection.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/content/content.php';
 
 $result=1;
 $options = array();
@@ -40,7 +40,7 @@ if (isset($_REQUEST['isModal'])){
 
 $filename='contentExport.csv';
 $data=content::getList(null,null,null,$options);
-$file=$_SERVER['DOCUMENT_ROOT'] . 'media/public/files/'.$filename;
+$file=$_SERVER['DOCUMENT_ROOT'] . '/media/public/files/'.$filename;
 $fp = fopen($file, 'w');
 if ($fp!=null) {
 	foreach ($data as $d) {
