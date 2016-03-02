@@ -33,15 +33,6 @@
 		$errors['actorLastName']="Nom manquant";
 	}
 
-	if (isset($_FILES['actorFile'])) {
-		$bUpload=1;
-		$uploadFile = uploadFile($_FILES['actorFile']);
-		$status=$uploadFile['status'];
-		if (isset($uploadFile['error'])==true){
-			$errors['actorFile']=$uploadFile['error'];
-		}
-	}
-
 	if ($status==1){
 		if (actor::exists($_REQUEST['actorFirstName'],$_REQUEST['actorLastName'],$actor->idActor)==0) {
 			if ($actor->idActor == 0) {
@@ -51,11 +42,15 @@
 				$result = $actor->update();
 				$url = "/media/model/actor/view/actor.php";
 			}
-			if ($result==true && $bUpload==1){
-				$resultUpload=fileUpload($actor->idActor,'actor',$uploadFile['ext'],$uploadFile['name'],true);
-
-				if ($result==true){
-					$result=actor::setImage($actor->idActor,$resultUpload['image']);
+			if ($result==true){
+				$files = $_FILES['actorFile'];
+				print_r($files);
+				for($i=0; $i<count($files['name']); $i++) {
+					$result = uploadFile($files,$i,$id,_TYPE_ACTOR_,$object,true);
+					$status = $uploadFile['status'];
+					if (isset($uploadFile['error']) == true) {
+						$errors['actorFile'] = $uploadFile['error'];
+					}
 				}
 			}
 		}else{

@@ -25,12 +25,6 @@
     <file url="file://$PROJECT_DIR$/model/disk/view/diskFormSearch.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/disk/view/diskList.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/model/disk/view/diskManage.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/model/options/category/category.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/model/options/category/controller/action.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/model/options/category/controller/delete.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/model/options/content_type/content_type.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/model/options/language/language.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/model/options/quality/quality.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/public/css/media.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/public/js/media.js" charset="UTF-8" />
   </component>

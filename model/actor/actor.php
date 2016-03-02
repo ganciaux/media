@@ -1,6 +1,7 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/utils.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/image/image.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/content/content.php';
 
 class actor{
@@ -9,6 +10,7 @@ class actor{
 	public $lastName='';
 	public $firstName='';
     public $search='';
+	public $images=array();
 
 	public function __construct($id=0){
 		if ($id>0)
@@ -47,7 +49,7 @@ class actor{
 
 	static function getList($bOption=null,$bNone=null,$bAll=null,$options=null){
 		global $bdd;
-        $sql="select idActor,firstName,lastName,image from actor";
+        $sql="select idActor,firstName,lastName from actor";
         $whereoption=" where idActor>0";
         $search="";
         $orderby=" order by firstName";
@@ -95,7 +97,7 @@ class actor{
 
 	function getActor($id){
 		global $bdd;
-		$req = $bdd->prepare('select idActor,firstName,lastName,image from actor where idActor=:id');
+		$req = $bdd->prepare('select idActor,firstName,lastName from actor where idActor=:id');
 		$req->bindParam(":id",$id);
 		$result=$req->execute();
 		if ($result==1){
@@ -103,7 +105,7 @@ class actor{
 			$this->idActor=$data['idActor'];
 			$this->firstName=$data['firstName'];
 			$this->lastName=$data['lastName'];
-			$this->image=$data['image'];
+			$this->images=image::getList($id, _TYPE_ACTOR_);
 		}else{
 			$data=init();
 		}
@@ -111,49 +113,28 @@ class actor{
 		return $data;
 	}
 
-	static function getImage($id){
-		global $bdd;
-		$req = $bdd->prepare('select image from actor where idActor=:id');
-		$req->bindParam(":id",$id);
-		$result=$req->execute();
-		if ($result==1){
-			$data = $req->fetch();
-			return $data['image'];
-		}else{
-			return '';
-		}
-	}
-
 	static function delete($id){
 		global $bdd;
-		$image=actor::getImage($id);
-		if (strlen($image)>0) {
-			$result=unlink($_SERVER['DOCUMENT_ROOT'] . $image);
-			if ($result==true) {
-				$result = unlink($_SERVER['DOCUMENT_ROOT'] . 'small_' . $image);
-			}
-		}
+		$req = $bdd->prepare('delete from actor where idActor=:id');
+		$req->bindParam(":id", $id, PDO::PARAM_INT);
+		$result = $req->execute();
 		if ($result==true) {
-			$req = $bdd->prepare('delete from actor where idActor=:id');
-			$req->bindParam(":id", $id, PDO::PARAM_INT);
-			$result = $req->execute();
-			if ($result == 1) {
-				print 'content delete';
-				$result = content::deleteContentActor($id);
-			}
+			print 'content delete';
+			$result = content::deleteContentActor($id);
 		}
+		if ($result==true)
+			$result=image::delete(null, $id,_TYPE_ACTOR_);
+
 		return (int)$result;
 	}
 
 	function insert(){
 		global $bdd;
-		$image="";
 		$search=setSearchString($this->firstName.$this->lastName);
-		$req = $bdd->prepare('insert into actor (firstName,lastName,search,image) values (:firstname,:lastname,:search,:image)');
+		$req = $bdd->prepare('insert into actor (firstName,lastName,search) values (:firstname,:lastname,:search)');
 		$req->bindParam(":firstname", $this->firstName, PDO::PARAM_STR);
 		$req->bindParam(":lastname", $this->lastName, PDO::PARAM_STR);
         $req->bindParam(":search", $search, PDO::PARAM_STR);
-		$req->bindParam(":image", $image, PDO::PARAM_STR);
 		$result=$req->execute();
 		$this->idActor = $bdd->lastInsertId();
 		return (int)$result;
@@ -178,15 +159,6 @@ class actor{
 		$req->bindParam(":firstname", $this->firstName, PDO::PARAM_STR);
 		$req->bindParam(":lastname", $this->lastName, PDO::PARAM_STR);
         $req->bindParam(":search", $search, PDO::PARAM_STR);
-		$result=$req->execute();
-		return (int)$result;
-	}
-
-	static function setImage($id,$image){
-		global $bdd;
-		$req = $bdd->prepare('update actor set image=:image where idActor=:id');
-		$req->bindParam(":id", $id, PDO::PARAM_INT);
-		$req->bindParam(":image", $image, PDO::PARAM_STR);
 		$result=$req->execute();
 		return (int)$result;
 	}

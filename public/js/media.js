@@ -443,8 +443,13 @@ $('document').ready(function() {
 					$.each(form.find('[type=file]'), function(index, input) {
 							if (input.files.length == 1) {
 									data.append(input.name, input.files[0]);
+                                console.log(input.files[0]);
 							} else if (input.files.length > 1) {
-									data.append(input.name, input.files);
+                                var i=0;
+                                for (i=0;i<input.files.length;i++){
+                                    data.append(input.name,input.files[i] );
+                                    console.log(input.files[i]);
+                                }
 							}
 					});
 			}
@@ -543,4 +548,50 @@ $('document').ready(function() {
         format: 'dd/mm/yyyy',
         weekStart: 1
     });
+
+    $(".tooltip-info").each(function() {
+        var image='/media/public/img/actor/22/21298_56d5a55d24836.jpg';
+        var html='<img src="'+image+'" />';
+        console.log(html);
+        $( "#test").tooltip({ content:  html});
+    });
+
+    $(document).on("mouseenter",".popover-info", function () {
+        var html='<div class="media">';
+        var image=$(this).data('image');
+        if (image!='')
+            html+='<img src="'+image+'" width="250px" class="media-object" alt="Sample Image">';
+        html+='<div class="media-body"><h4 class="media-heading">Jhon Carter</h4><p>Excellent Bootstrap popover! I really love it.</p></div></div>';
+        $(this).popover({
+            trigger : 'manual',
+            placement : 'top',
+            html : true,
+            content : html
+        });
+        $(this).popover('show');
+    });
+
+    $(document).on("mouseleave",".popover-info", function () {
+        $(this).popover('hide');
+    });
+
+    $("#input-id").fileinput();
+});
+
+
+$(document).ready(function() {
+    $(".fancybox").fancybox();
+
+    $(document).on({
+        mouseenter: function () {
+            var id=$(this).attr('id');
+            $('#modal-object-info').val(id);
+            $('#modal-info-body').html();
+            $('#modal-info').modal('show');
+        },
+        mouseleave: function () {
+            //$('#modal-info').modal('hide');
+        }
+    }, '.object-action-info');
+
 });

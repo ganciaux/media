@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.user-action-info {
+    cursor: pointer;
+}
+
 .user-action-search {
     cursor: pointer;
 }

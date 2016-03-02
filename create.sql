@@ -10,7 +10,7 @@ create table actor(
  firstName varchar(64),
  lastName varchar(64),
  search varchar(128), 
- idImage int, primary key(idActor));
+ primary key(idActor));
  
 create table content_type(
  idContentType int AUTO_INCREMENT,
@@ -68,13 +68,15 @@ create table content(
  idDisk int,
  idLanguage int,
  idQuality int,
- idImage int, primary key(idContent) );
+ primary key(idContent) );
 
  create table image(
  idImage int AUTO_INCREMENT,
+ idRef int,
+ iRefType int,
  pathName varchar(128),
  fileName varchar(128),
- idImage int, primary key(idImage) );
+ primary key(idImage) );
  
 create table content_bundle(
  idContentBundle int AUTO_INCREMENT,

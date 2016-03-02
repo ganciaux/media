@@ -1,5 +1,10 @@
 <?php
 
+define("_TYPE_DISK_", 1);
+define("_TYPE_ACTOR_", 2);
+define("_TYPE_CONTENT_", 3);
+define("_TYPE_BUNDLE_", 4);
+
 function getValue($array, $key, $bHtml=true){
     if (array_key_exists ($key, $array )) {
         if ($bHtml==true){
@@ -109,15 +114,25 @@ function getPublicPath(){
     return '/media/public';
 }
 
-function uploadFile($file){
+function uploadFile($files,$i,$id,$type,$object,$bresize){
     $result=array();
     $separator='.';
     $status=1;
-    $file_name = $file['name'];
-    $file_size = $file['size'];
-    $file_tmp = $file['tmp_name'];
-    $file_type = $file['type'];
-    $file_error = $file['error'];
+
+    /*
+    if (is_uploaded_file($file['tmp_name'])) {
+        echo "File ". $file['name'] ." téléchargé avec succès.\n";
+    } else {
+        echo "Attaque possible par téléchargement de fichier : ";
+        echo "Nom du fichier : '". $file['tmp_name'] . "'.";
+    }
+    */
+
+    $file_name = $files['name'][$i];
+    $file_size = $files['size'][$i];
+    $file_tmp = $files['tmp_name'][$i];
+    $file_type = $files['type'][$i];
+    $file_error = $files['error'][$i];
     $file_details=explode($separator,$file_name);
     $file_ext=strtolower(end($file_details));
 
@@ -133,9 +148,18 @@ function uploadFile($file){
         $result['error']='Fichier supérieur à 2 MB';
     }
 
-    $result['status']=$status;
-    $result['name']=$file_tmp;
-    $result['ext']=$file_ext;
+    $path=getFilePath($id,$object);
+    $absolutepath=getServerPublicPath().$path;
+    $filename=$id.'_'.uniqid() .'.'.$file_ext;
+
+    $result['status']=move_uploaded_file($file_tmp,$absolutepath.'/'.$filename);
+    if (isset($bresize) && $bresize==true && $result==true) {
+        $result['status']=resizeFile($absolutepath, $filename, 0.5);
+    }
+
+    if ($result['status'] == true) {
+        $result['status'] = image::insert($id, $type, $path, $filename);
+    }
 
     return $result;
 }
@@ -168,42 +192,4 @@ function resizeFile($filepath,$filename,$percent){
     imagejpeg($thumb,$filepath.'/small_'.$filename);
 
     return $result;
-}
-
-function fileUpload($id,$object,$ext,$uploadname,$bresize){
-    $resultUpload=array();
-    $path=getFilePath($id,$object);
-    $absolutepath=getServerPublicPath().$path;
-    $filename=$id.'.'.$ext;
-
-    $result=move_uploaded_file($uploadname,$absolutepath.'/'.$filename);
-    if (isset($bresize) && $bresize==true && $result==true) {
-        $result=resizeFile($absolutepath, $filename, 0.5);
-    }
-    $resultUpload['result']=$result;
-    $resultUpload['path']=$path;
-    $resultUpload['absolutepath']=$absolutepath;
-    $resultUpload['filename']=$filename;
-    $resultUpload['image']=getPublicPath().$path.'/'.$filename;
-
-    return $resultUpload;
-}
-
-function imageInsert($pathName,$fileName){
-    global $bdd;
-    $req = $bdd->prepare('insert into image (pathName,fileName) values (:pathName,:fileName)');
-    $req->bindParam(":pathName", $pathName, PDO::PARAM_STR);
-    $req->bindParam(":fileName", $fileName, PDO::PARAM_STR);
-    $result=$req->execute();
-    return $bdd->lastInsertId();
-}
-
-function imageUpdate($id,$pathName,$fileName){
-    global $bdd;
-    $req = $bdd->prepare('update image set pathName=:pathName, fileName=:fileName )');
-    $req->bindParam(":pathName", $pathName, PDO::PARAM_STR);
-    $req->bindParam(":fileName", $fileName, PDO::PARAM_STR);
-    $req->bindParam(":id", $id, PDO::PARAM_INT);
-    $result=$req->execute();
-    return (int)$result;
 }

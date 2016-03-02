@@ -34,7 +34,11 @@ print '<div class="col-xs-12">';
 print $form->inputForm("text", "actorLastName", $actor->lastName, ['label'=>'Nom','placeholder'=>'nom']);
 print $form->inputForm("text", "actorFirstName", $actor->firstName, ['label'=>'Prénom','placeholder'=>'prénom']);
 
-print $form->inputForm("file", "actorFile", null, ['class'=>'']);
+//print $form->inputForm("file", "actorFile", null, ['class'=>'']);
+?>
+	<label class="control-label">Select File</label>
+	<input id="actorFile" name="actorFile[]" type="file" class="file" multiple="multiple" data-show-upload="false" data-show-caption="true">
+<?php
 print '</div>';
 print '<div class="col-xs-12" style="display: flex;">';
 print $form->button("Valider",null,['class'=>"media-btn"]);
@@ -43,5 +47,4 @@ print '</div>';
 print $form->close();
 panelClose();
 ?>
-
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/footer.php'; ?>
