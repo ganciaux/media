@@ -47,4 +47,11 @@ print '</div>';
 print $form->close();
 panelClose();
 ?>
+
+<?php
+	$idRef=$id;
+	$iRefType=_TYPE_ACTOR_;
+	include $_SERVER['DOCUMENT_ROOT'] . '/media/model/image/view/imageList.php';
+?>
+
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/footer.php'; ?>

@@ -8,7 +8,7 @@
 	
 	if (isset($_REQUEST['idActor'])){
 		$result=actor::delete($_REQUEST['idActor']);
-		$message="L'acteur à bien été supprimé";
+		$message="L'acteur a bien été supprimé";
 	}else{
 		$result=0;
 		$message="Impossible de supprimer l'acteur";

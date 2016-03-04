@@ -107,7 +107,8 @@ function getYearRange($none=null,$all=null){
 
 
 function getServerPublicPath(){
-    return $_SERVER['DOCUMENT_ROOT'].'/media/public';
+    $path=$_SERVER['DOCUMENT_ROOT'].'/media/public';
+    return str_replace ( "//" ,"/",$path);
 }
 
 function getPublicPath(){
@@ -115,50 +116,41 @@ function getPublicPath(){
 }
 
 function uploadFile($files,$i,$id,$type,$object,$bresize){
-    $result=array();
+    $result=array('result'=>1,'status'=>1);
     $separator='.';
-    $status=1;
 
-    /*
-    if (is_uploaded_file($file['tmp_name'])) {
-        echo "File ". $file['name'] ." téléchargé avec succès.\n";
-    } else {
-        echo "Attaque possible par téléchargement de fichier : ";
-        echo "Nom du fichier : '". $file['tmp_name'] . "'.";
-    }
-    */
+    if (is_uploaded_file($files['tmp_name'][$i])!=true) {
+        $result['result'] = 0;
+        $result['error'] = "Impossible de télécharger le fichier : " . $files['tmp_name'][$i];
+    }else{
+        $file_name = $files['name'][$i];
+        $file_size = $files['size'][$i];
+        $file_tmp = $files['tmp_name'][$i];
+        $file_type = $files['type'][$i];
+        $file_error = $files['error'][$i];
+        $file_details=explode($separator,$file_name);
+        $file_ext=strtolower(end($file_details));
+        $expensions=array("jpeg","jpg","png");
 
-    $file_name = $files['name'][$i];
-    $file_size = $files['size'][$i];
-    $file_tmp = $files['tmp_name'][$i];
-    $file_type = $files['type'][$i];
-    $file_error = $files['error'][$i];
-    $file_details=explode($separator,$file_name);
-    $file_ext=strtolower(end($file_details));
+        $path=getFilePath($id,$object);
+        $absolutepath=getServerPublicPath().$path;
+        $filename=$id.'_'.uniqid() .'.'.$file_ext;
 
-    $expensions=array("jpeg","jpg","png");
+        if(in_array($file_ext,$expensions)=== false){
+            $result['result']=0;
+            $result['status']=422;
+            $result['error']="Extension non permise, choisir un fichier JPEG, JPG ou PNG";
+        }
 
-    if(in_array($file_ext,$expensions)=== false){
-        $status=422;
-        $result['error']="Extension non permise, choisir un fichier JPEG, JPG ou PNG";
-    }
+        $result['result']=(int)move_uploaded_file($file_tmp,$absolutepath.'/'.$filename);
 
-    if($file_size > 2097152) {
-        $status=422;
-        $result['error']='Fichier supérieur à 2 MB';
-    }
+        if (isset($bresize) && $bresize==true && $result['result']==1) {
+            $result['result']=resizeFile($absolutepath, $filename, 0.5);
+        }
 
-    $path=getFilePath($id,$object);
-    $absolutepath=getServerPublicPath().$path;
-    $filename=$id.'_'.uniqid() .'.'.$file_ext;
-
-    $result['status']=move_uploaded_file($file_tmp,$absolutepath.'/'.$filename);
-    if (isset($bresize) && $bresize==true && $result==true) {
-        $result['status']=resizeFile($absolutepath, $filename, 0.5);
-    }
-
-    if ($result['status'] == true) {
-        $result['status'] = image::insert($id, $type, $path, $filename);
+        if ($result['result'] == 1) {
+            $result['idImage'] = image::insert($id, $type, $path, $filename);
+        }
     }
 
     return $result;
@@ -191,5 +183,5 @@ function resizeFile($filepath,$filename,$percent){
 
     imagejpeg($thumb,$filepath.'/small_'.$filename);
 
-    return $result;
+    return (int)$result;
 }

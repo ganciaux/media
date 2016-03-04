@@ -1,5 +1,7 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/utils.php';
+
 class image
 {
     public $idImage;
@@ -7,11 +9,10 @@ class image
     public $iRefType;
     public $pathName;
     public $fileName;
-    public $iOrder;
 
     public function __construct($id=0)	{
         if ($id>0)
-            $this->getImage($id);
+            self::getImage($id);
     }
 
     public function debug()	{
@@ -20,13 +21,12 @@ class image
         print ' iRefType' . $this->iRefType;
         print ' pathName:' . $this->pathName;
         print ' fileName:' . $this->fileName;
-        print ' iOrder:' . $this->iOrder;
     }
 
-    function getImage($id)
+    static public function getImage($id)
     {
         global $bdd;
-        $req = $bdd->prepare('select idRef, iRefType, iOrder, pathName, fileName from image where idImage=:id');
+        $req = $bdd->prepare('select idImage, idRef, iRefType, pathName, fileName from image where idImage=:id');
         $req->bindParam(":id", $id, PDO::PARAM_INT);
         $result = $req->execute();
         if ($result == true) {
@@ -87,6 +87,8 @@ class image
         if (isset($idRef) && isset($iRefType)) {
             $images = self::getList($idRef,$iRefType);
         }
+
+        print_r($images[0]);
 
         foreach((array)$images as $image){
             $req = $bdd->prepare("delete from image where idImage=:id");

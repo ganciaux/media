@@ -232,6 +232,7 @@ function modalActionDelete() {
         type: "DELETE",
         data: {'id':idObject, '_token': $('meta[name=csrf-token]').attr('content')},
         success: function(data){
+            console.log('modalActionDelete');
             updateEffect(data, 'table-'+object, idObject, action, callback );
             $('#modal-delete').modal('hide');
         },

@@ -22,23 +22,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="actor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/actor/view/actor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4512196">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="actorManage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/actor/view/actorManage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.943396">
-              <caret line="39" column="88" selection-start-line="39" selection-start-column="88" selection-end-line="39" selection-end-column="88" />
+            <state vertical-scroll-proportion="-8.9811325">
+              <caret line="53" column="78" selection-start-line="53" selection-start-column="78" selection-end-line="53" selection-end-column="78" />
               <folding>
-                <marker date="1456916074696" expanded="true" signature="1478:1492" placeholder="..." />
+                <marker date="1457103518630" expanded="true" signature="1478:1492" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -47,8 +37,8 @@
       <file leaf-file-name="media.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/media.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.620689">
-              <caret line="448" column="43" selection-start-line="448" selection-start-column="43" selection-end-line="448" selection-end-column="43" />
+            <state vertical-scroll-proportion="-13.206897">
+              <caret line="234" column="42" selection-start-line="234" selection-start-column="42" selection-end-line="234" selection-end-column="42" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -56,21 +46,98 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="action.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/actor/controller/action.php">
+      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/actor/controller/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6981132">
-              <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="9" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="actor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/actor/actor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="67" />
+              <folding>
+                <marker date="1456841731489" expanded="true" signature="908:972" placeholder="select count..actor..." />
+                <marker date="1456841731489" expanded="true" signature="1377:1421" placeholder="select idAct..actor..." />
+                <marker date="1456841731489" expanded="true" signature="2589:2651" placeholder="select idAct..actor..." />
+                <marker date="1456841731489" expanded="true" signature="3043:3078" placeholder="delete from ..." />
+                <marker date="1456841731489" expanded="true" signature="3478:3561" placeholder="insert into ..." />
+                <marker date="1456841731489" expanded="true" signature="4000:4083" placeholder="insert into ..." />
+                <marker date="1456841731489" expanded="true" signature="4448:4539" placeholder="update actor..." />
+                <marker date="1456841731489" expanded="true" signature="5626:5678" placeholder="select count..content_actor..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/global/utils.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13793103">
-              <caret line="146" column="15" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="15" />
+            <state vertical-scroll-proportion="-2.5384614">
+              <caret line="95" column="76" selection-start-line="95" selection-start-column="76" selection-end-line="95" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actorList.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/actor/view/actorList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.4615383">
+              <caret line="31" column="381" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="381" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/image/image.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.923077">
+              <caret line="84" column="39" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="39" />
+              <folding>
+                <marker date="1457105170574" expanded="true" signature="653:733" placeholder="select idRef..image..." />
+                <marker date="1457105170574" expanded="true" signature="1101:1199" placeholder="insert into ..." />
+                <marker date="1457105170574" expanded="true" signature="1647:1720" placeholder="update image..." />
+                <marker date="1457105170574" expanded="true" signature="2068:2169" placeholder="select idIma..image..." />
+                <marker date="1457105170574" expanded="true" signature="2958:2993" placeholder="delete from ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/global/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37269372">
+              <caret line="21" column="45" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="imageList.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/image/view/imageList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="10" column="381" selection-start-line="10" selection-start-column="381" selection-end-line="10" selection-end-column="381" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/image/controller/delete.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -81,8 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/model/actor/view/actorQuickList.php" />
-        <option value="$PROJECT_DIR$/model/actor/controller/search.php" />
         <option value="$PROJECT_DIR$/global/download.php" />
         <option value="$PROJECT_DIR$/model/actor/controller/export.php" />
         <option value="$PROJECT_DIR$/model/content/controller/export.php" />
@@ -122,16 +187,18 @@
         <option value="$PROJECT_DIR$/model/category/category.php" />
         <option value="$PROJECT_DIR$/model/content/content.php" />
         <option value="$PROJECT_DIR$/model/actor/actor.php" />
-        <option value="$PROJECT_DIR$/public/css/media.css" />
         <option value="$PROJECT_DIR$/global/modal.php" />
         <option value="$PROJECT_DIR$/model/actor/view/actorList.php" />
         <option value="$PROJECT_DIR$/model/actor/view/actor.php" />
+        <option value="$PROJECT_DIR$/model/actor/controller/action.php" />
+        <option value="$PROJECT_DIR$/public/css/media.css" />
+        <option value="$PROJECT_DIR$/model/actor/view/actorManage.php" />
+        <option value="$PROJECT_DIR$/model/image/view/imageList.php" />
+        <option value="$PROJECT_DIR$/model/image/controller/delete.php" />
+        <option value="$PROJECT_DIR$/public/js/media.js" />
+        <option value="$PROJECT_DIR$/global/utils.php" />
         <option value="$PROJECT_DIR$/model/image/image.php" />
         <option value="$PROJECT_DIR$/global/header.php" />
-        <option value="$PROJECT_DIR$/model/actor/view/actorManage.php" />
-        <option value="$PROJECT_DIR$/public/js/media.js" />
-        <option value="$PROJECT_DIR$/model/actor/controller/action.php" />
-        <option value="$PROJECT_DIR$/global/utils.php" />
       </list>
     </option>
   </component>
@@ -147,10 +214,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="207" />
-    <option name="y" value="19" />
+    <option name="x" value="178" />
+    <option name="y" value="231" />
     <option name="width" value="1512" />
-    <option name="height" value="678" />
+    <option name="height" value="727" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -272,6 +339,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -412,7 +501,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="207" y="19" width="1512" height="678" extended-state="0" />
+    <frame x="178" y="231" width="1512" height="727" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22658402" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -473,25 +562,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/disk/view/diskList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/disk/disk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0188675">
-          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/disk/controller/search.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.8867924">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -515,6 +590,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6792455">
           <caret line="16" column="37" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -526,17 +602,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/actor/view/actorContentList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/actor/view/actorContentListLine.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
           <caret line="11" column="46" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -551,6 +621,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.461538">
           <caret line="44" column="52" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -558,6 +629,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66341466">
           <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -573,6 +645,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.090909">
           <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -596,6 +669,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
           <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -603,6 +677,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5384617">
           <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -610,6 +685,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
           <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -617,6 +693,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5384617">
           <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -624,6 +701,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -631,6 +709,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
           <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -646,6 +725,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.115385">
           <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -770,40 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/actor/controller/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/actor/actor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.6585364">
-          <caret line="120" column="28" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
-          <folding>
-            <marker date="1456841731489" expanded="true" signature="-1:-1" placeholder="select count..actor..." />
-            <marker date="1456841731489" expanded="true" signature="-1:-1" placeholder="select idAct..actor..." />
-            <marker date="1456841731489" expanded="true" signature="-1:-1" placeholder="select idAct..actor..." />
-            <marker date="1456841731489" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1456841731489" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1456841731489" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1456841731489" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1456841731489" expanded="true" signature="-1:-1" placeholder="update actor..." />
-            <marker date="1456841731489" expanded="true" signature="-1:-1" placeholder="select count..content_actor..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/media.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/global/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -820,20 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/image/image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.0">
-          <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
-          <folding>
-            <marker date="1456909989702" expanded="true" signature="-1:-1" placeholder="select idRef..image..." />
-            <marker date="1456909989702" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1456909989702" expanded="true" signature="-1:-1" placeholder="update image..." />
-            <marker date="1456909989702" expanded="true" signature="-1:-1" placeholder="select idIma..image..." />
-            <marker date="1456909989702" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/actor/view/actorFormSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.807693">
@@ -842,42 +874,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/actor/view/actorList.php">
+    <entry file="file://$PROJECT_DIR$/model/actor/view/actorContentList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.188679">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/global/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.695122">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/actor/view/actorManage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.943396">
-          <caret line="39" column="88" selection-start-line="39" selection-start-column="88" selection-end-line="39" selection-end-column="88" />
-          <folding>
-            <marker date="1456916074696" expanded="true" signature="1478:1492" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/media.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.620689">
-          <caret line="448" column="43" selection-start-line="448" selection-start-column="43" selection-end-line="448" selection-end-column="43" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,16 +892,117 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/actor/controller/action.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6981132">
-          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+        <state vertical-scroll-proportion="-9.396227">
+          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/media.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="20" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/actor/view/actorManage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.9811325">
+          <caret line="53" column="78" selection-start-line="53" selection-start-column="78" selection-end-line="53" selection-end-column="78" />
+          <folding>
+            <marker date="1457103518630" expanded="true" signature="1478:1492" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/actor/view/actorList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4615383">
+          <caret line="31" column="381" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="381" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/image/view/imageList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="381" selection-start-line="10" selection-start-column="381" selection-end-line="10" selection-end-column="381" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/actor/controller/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="9" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/media.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.206897">
+          <caret line="234" column="42" selection-start-line="234" selection-start-column="42" selection-end-line="234" selection-end-column="42" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/actor/actor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="67" />
+          <folding>
+            <marker date="1456841731489" expanded="true" signature="908:972" placeholder="select count..actor..." />
+            <marker date="1456841731489" expanded="true" signature="1377:1421" placeholder="select idAct..actor..." />
+            <marker date="1456841731489" expanded="true" signature="2589:2651" placeholder="select idAct..actor..." />
+            <marker date="1456841731489" expanded="true" signature="3043:3078" placeholder="delete from ..." />
+            <marker date="1456841731489" expanded="true" signature="3478:3561" placeholder="insert into ..." />
+            <marker date="1456841731489" expanded="true" signature="4000:4083" placeholder="insert into ..." />
+            <marker date="1456841731489" expanded="true" signature="4448:4539" placeholder="update actor..." />
+            <marker date="1456841731489" expanded="true" signature="5626:5678" placeholder="select count..content_actor..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/global/utils.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13793103">
-          <caret line="146" column="15" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="15" />
+        <state vertical-scroll-proportion="-2.5384614">
+          <caret line="95" column="76" selection-start-line="95" selection-start-column="76" selection-end-line="95" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/image/controller/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/image/image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.923077">
+          <caret line="84" column="39" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="39" />
+          <folding>
+            <marker date="1457105170574" expanded="true" signature="653:733" placeholder="select idRef..image..." />
+            <marker date="1457105170574" expanded="true" signature="1101:1199" placeholder="insert into ..." />
+            <marker date="1457105170574" expanded="true" signature="1647:1720" placeholder="update image..." />
+            <marker date="1457105170574" expanded="true" signature="2068:2169" placeholder="select idIma..image..." />
+            <marker date="1457105170574" expanded="true" signature="2958:2993" placeholder="delete from ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/global/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37269372">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="45" />
           <folding />
         </state>
       </provider>

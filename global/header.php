@@ -13,9 +13,9 @@
     <meta name="csrf-token" content="<?php print session::csrf_token(); ?>"/>
     <title>Médiathèque</title>
     <!-- Bootstrap core CSS -->
-    <link href="/media/public/css/bootstrap-3.3.6.css" rel="stylesheet">
-    <link href="/media/public/css/font-awesome-4.5.0.css" rel="stylesheet">
-    <link href="/media/public/css/dataTables.bootstrap-1.10.11.css" rel="stylesheet">
+    <link href="/media/public/bootstrap-3.3.6/css/bootstrap.css" rel="stylesheet">
+    <link href="/media/public/font-awesome-4.5.0/css/font-awesome.css" rel="stylesheet">
+    <link href="/media/public/DataTables-1.10.11/media/css/dataTables.bootstrap.css" rel="stylesheet">
     <link href="/media/public/css/jquery.dataTables-1.10.11.css" rel="stylesheet">
     <link href="/media/public/css/bootstrap-datepicker.css" rel="stylesheet" type="text/css" />
     <link href="/media/public/css/media.css" rel="stylesheet">
@@ -25,9 +25,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 	  <script src="/media/public/js/jquery-2.1.4.js"></script>
-    <script src="/media/public/js/bootstrap-3.3.6.js"></script>
+    <script src="/media/public/bootstrap-3.3.6/js/bootstrap.js"></script>
     <script src="/media/public/js/jquery.dataTables-1.10.11.js"></script>
-    <script src="/media/public/js/dataTables.bootstrap-1.10.11.js"></script>		
+    <script src="/media/public/DataTables-1.10.11/media/js/dataTables.bootstrap.js"></script>
     <script src="/media/public/js/bootstrap-datepicker.js"></script>
   <script src="/media/public/js/canvas-to-blob.min.js" type="text/javascript"></script>
   	<script src="/media/public/js/fileinput.js"></script>

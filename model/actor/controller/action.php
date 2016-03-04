@@ -35,6 +35,8 @@
 
 	if ($status==1){
 		if (actor::exists($_REQUEST['actorFirstName'],$_REQUEST['actorLastName'],$actor->idActor)==0) {
+			global $bdd;
+			$bdd->beginTransaction();
 			if ($actor->idActor == 0) {
 				$result = $actor->insert();
 				$url = "/media/model/actor/view/actorManage.php?idActor=" . $actor->idActor;
@@ -44,14 +46,19 @@
 			}
 			if ($result==true){
 				$files = $_FILES['actorFile'];
-				print_r($files);
 				for($i=0; $i<count($files['name']); $i++) {
-					$result = uploadFile($files,$i,$id,_TYPE_ACTOR_,$object,true);
-					$status = $uploadFile['status'];
+					$uploadFile = uploadFile($files,$i,$actor->idActor,_TYPE_ACTOR_,'actor',true);
+					$result=(int)$uploadFile['result'];
+					$status=(int)$uploadFile['status'];
 					if (isset($uploadFile['error']) == true) {
 						$errors['actorFile'] = $uploadFile['error'];
 					}
 				}
+			}
+			if ($result==true){
+				$bdd->commit();
+			}else{
+				$bdd->rollBack();
 			}
 		}else{
 			$status=422;
