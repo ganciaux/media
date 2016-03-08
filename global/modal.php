@@ -19,6 +19,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <input type="hidden" id="modal-object-delete" value="0">
+            <input type="hidden" id="modal-type-delete" value="0">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 id="modal-delete-title" class="modal-title">Supprimer</h4>

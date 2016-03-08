@@ -106,6 +106,11 @@ function checkArray(myArray, myKey, myValue){
  */
 var fnjsoncallback = new Array();
 
+fnjsoncallback['imageDelete'] = function (id) {
+    $("#div-"+id).remove();
+}
+
+
 fnjsoncallback['contentSetActor'] = function (idCallback,myObjectList){
     var actorList = new Array();
 
@@ -138,6 +143,23 @@ fnjsoncallback['contentSetActor'] = function (idCallback,myObjectList){
 fnjsoncallback['jsoncallback'] = function jsoncallback(data){
     //**debug console.log('jsoncallback:');
     //**debug console.log(data);
+}
+
+function imageList(param) {
+    var data = JSON.parse(param);
+    $.ajax({
+        url: "/media/model/image/controller/list.php",
+        type: "POST",
+        dataType:"html",
+        data: {'idRef':data.idRef,'iRefType':data.iRefType},
+        success: function(data){
+            $("#image-list").html(data);
+            $(".fileinput-remove").eq(0).trigger('click');
+        },
+        error:function(jqxhr, textStatus, error) {
+
+        }
+    });
 }
 
 fnjsoncallback['action-delete'] = function actionDelete(data, idTable, id, action) {
@@ -227,13 +249,18 @@ function modalActionDelete() {
     var object=$("#"+id).data('object');
     var action=$("#"+id).data('action');
     var callback=$("#"+id).data('callback');
+    var fncallback=$("#"+id).data('fncallback');
     $.ajax({
         url: $("#"+id).data('url'),
         type: "DELETE",
         data: {'id':idObject, '_token': $('meta[name=csrf-token]').attr('content')},
         success: function(data){
             console.log('modalActionDelete');
-            updateEffect(data, 'table-'+object, idObject, action, callback );
+            if (typeof fncallback != 'undefined' && fncallback.length > 0) {
+                fnjsoncallback[fncallback](id);
+            }else {
+                updateEffect(data, 'table-' + object, idObject, action, callback);
+            }
             $('#modal-delete').modal('hide');
         },
         error:function(jqxhr, textStatus, error) {
@@ -519,9 +546,11 @@ $('document').ready(function() {
 							}
 							else if (typeof response.callback != 'undefined'){
 									console.log('form.bootstrap-modal-form: callback');
-                                                                        console.log(response.contents);
-									;//fnjsoncallback[response.callback](response,'table-'+object,response.id, action);
+									fnjsoncallback[response.callback]();
 							}
+                            if (typeof response.imageList != 'undefined'){
+                                imageList(response.imageList);
+                            }
 					}
                     else {
                         $('#' + object + 'SearchList').html(response);
@@ -560,9 +589,11 @@ $('document').ready(function() {
     $(document).on("mouseenter",".popover-info", function () {
         var html='<div class="media">';
         var image=$(this).data('image');
+        var header=$(this).data('header');
+        var body=$(this).data('header');
         if (image!='')
-            html+='<img src="'+image+'" width="250px" class="media-object" alt="Sample Image">';
-        html+='<div class="media-body"><h4 class="media-heading">Jhon Carter</h4><p>Excellent Bootstrap popover! I really love it.</p></div></div>';
+            html+='<img src="'+image+'" width="200px" class="media-object" alt="Sample Image">';
+        html+='<div class="media-body"><h4 class="media-heading">'+header+'</h4><p>'+body+'</p></div></div>';
         $(this).popover({
             trigger : 'manual',
             placement : 'top',

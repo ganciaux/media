@@ -49,6 +49,7 @@ class actor{
 
 	static function getList($bOption=null,$bNone=null,$bAll=null,$options=null){
 		global $bdd;
+		$data=array();
         $sql="select idActor,firstName,lastName from actor";
         $whereoption=" where idActor>0";
         $search="";
@@ -66,7 +67,6 @@ class actor{
         $search=setSearchString($search);
         $search.='%';
 
-
         $whereoption.=" and search like :search";
         $req = $bdd->prepare($sql.$whereoption.$orderby);
         $req->bindParam(":search", $search, PDO::PARAM_STR);
@@ -82,16 +82,24 @@ class actor{
 					$data['0']='Aucun';
 				}
 				foreach($res as $r){
-					$data[$r['idContent']]=$r['name'];
-					if ($r['year']!=0)
-						$data[$r['idContent']].=' - '.$r['year'];
 				}
 			}
-			else
-				$data = $res;
+			else {
+				foreach ($res as $r) {
+					$image = image::getList($r['idActor'], _TYPE_ACTOR_, true);
+					if (isset($image)){
+						$r['image'] =getPublicPath().$image[0]['pathName'].'/'.$image[0]['fileName'];
+					}
+					else{
+						$r['image']="";
+					}
+					array_push ($data, $r);
+				}
+			}
 		}
 		else
 			$data=array();
+
 		return $data;
 	}
 

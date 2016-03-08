@@ -16,35 +16,33 @@
     <link href="/media/public/bootstrap-3.3.6/css/bootstrap.css" rel="stylesheet">
     <link href="/media/public/font-awesome-4.5.0/css/font-awesome.css" rel="stylesheet">
     <link href="/media/public/DataTables-1.10.11/media/css/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="/media/public/css/jquery.dataTables-1.10.11.css" rel="stylesheet">
-    <link href="/media/public/css/bootstrap-datepicker.css" rel="stylesheet" type="text/css" />
+    <link href="/media/public/DataTables-1.10.11/media/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="/media/public/datepicker/css/datepicker.css" rel="stylesheet" type="text/css" />
     <link href="/media/public/css/media.css" rel="stylesheet">
-	  <link href="/media/public/css/fileinput.css" rel="stylesheet">
+	<link href="/media/public/file-input/css/fileinput.css" rel="stylesheet">
 
 		<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-	  <script src="/media/public/js/jquery-2.1.4.js"></script>
-    <script src="/media/public/bootstrap-3.3.6/js/bootstrap.js"></script>
-    <script src="/media/public/js/jquery.dataTables-1.10.11.js"></script>
-    <script src="/media/public/DataTables-1.10.11/media/js/dataTables.bootstrap.js"></script>
-    <script src="/media/public/js/bootstrap-datepicker.js"></script>
-  <script src="/media/public/js/canvas-to-blob.min.js" type="text/javascript"></script>
-  	<script src="/media/public/js/fileinput.js"></script>
-
-
+	<script src="/media/public/js/jquery-2.1.4.js"></script>
+	<script src="/media/public/bootstrap-3.3.6/js/bootstrap.js"></script>
+	<script src="/media/public/DataTables-1.10.11/media/js/jquery.dataTables.js"></script>
+	<script src="/media/public/DataTables-1.10.11/media/js/dataTables.bootstrap.js"></script>
+	<script src="/media/public/datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="/media/public/canvas-to-blob/js/canvas-to-blob.min.js" type="text/javascript"></script>
+	<script src="/media/public/file-input/js/fileinput.js"></script>
 
 	  <!-- Add fancyBox -->
-	  <link rel="stylesheet" href="/media/public/css/jquery.fancybox.2.1.5.css" type="text/css" media="screen" />
-	  <script type="text/javascript" src="/media/public/js/jquery.fancybox.pack.2.1.5.js"></script>
+	  <link rel="stylesheet" href="/media/public/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+	  <script type="text/javascript" src="/media/public/fancybox/jquery.fancybox.pack.js"></script>
 
 	  <!-- Optionally add helpers - button, thumbnail and/or media -->
-	  <link rel="stylesheet" href="/media/public/css/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
-	  <script type="text/javascript" src="/media/public/js/helpers/jquery.fancybox-buttons.js"></script>
-	  <script type="text/javascript" src="/media/public/js/helpers/jquery.fancybox-media.js"></script>
+	  <link rel="stylesheet" href="/media/public/fancybox/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+	  <script type="text/javascript" src="/media/public/fancybox/helpers/jquery.fancybox-buttons.js"></script>
+	  <script type="text/javascript" src="/media/public/fancybox/helpers/jquery.fancybox-media.js"></script>
 
-	  <link rel="stylesheet" href="/media/public/css/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
-	  <script type="text/javascript" src="/media/public/js/helpers/jquery.fancybox-thumbs.js"></script>
+	  <link rel="stylesheet" href="/media/public/fancybox/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+	  <script type="text/javascript" src="/media/public/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
 
     <script src="/media/public/js/media.js"></script>
 

@@ -7,9 +7,10 @@
 	$status=1;
 	$actor=new actor();
 	$message="";
-	$callback='';
-	$url='';
+	$callback="";
+	$url="";
 	$errors = array();
+	$imageListParam= array();
 
 	if (isset($_REQUEST['idActor']) && $_REQUEST['idActor']>0){
 		$actor->idActor = $_REQUEST['idActor'];
@@ -45,18 +46,22 @@
 				$url = "/media/model/actor/view/actor.php";
 			}
 			if ($result==true){
-				$files = $_FILES['actorFile'];
-				for($i=0; $i<count($files['name']); $i++) {
-					$uploadFile = uploadFile($files,$i,$actor->idActor,_TYPE_ACTOR_,'actor',true);
-					$result=(int)$uploadFile['result'];
-					$status=(int)$uploadFile['status'];
-					if (isset($uploadFile['error']) == true) {
-						$errors['actorFile'] = $uploadFile['error'];
+				if (isset($_FILES['actorFile'])) {
+					$files = $_FILES['actorFile'];
+					for ($i = 0; $i < count($files['name']); $i++) {
+						$uploadFile = uploadFile($files, $i, $actor->idActor, _TYPE_ACTOR_, 'actor', true);
+						$result = (int)$uploadFile['result'];
+						$status = (int)$uploadFile['status'];
+						if (isset($uploadFile['error']) == true) {
+							$errors['actorFile'] = $uploadFile['error'];
+						}
 					}
 				}
 			}
 			if ($result==true){
+				$callback="actorAction";
 				$bdd->commit();
+				$imageListParam=['idRef'=>(int)$actor->idActor, 'iRefType' =>_TYPE_ACTOR_];
 			}else{
 				$bdd->rollBack();
 			}
@@ -69,7 +74,7 @@
 		$result=0;
 	}
 	
-	$data = array("result"=>$result, "status"=>$status, "url"=>$url, "message"=>$message, "responseText"=>json_encode($errors));
+	$data = array("result"=>$result, "status"=>$status, "url"=>$url, "message"=>$message, "imageList"=>json_encode($imageListParam), "responseText"=>json_encode($errors));
 	
 	print json_encode($data);	
 	

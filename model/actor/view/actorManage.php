@@ -33,12 +33,12 @@ print $form->hidden('idActor', $id);
 print '<div class="col-xs-12">';
 print $form->inputForm("text", "actorLastName", $actor->lastName, ['label'=>'Nom','placeholder'=>'nom']);
 print $form->inputForm("text", "actorFirstName", $actor->firstName, ['label'=>'Prénom','placeholder'=>'prénom']);
-
-//print $form->inputForm("file", "actorFile", null, ['class'=>'']);
-?>
-	<label class="control-label">Select File</label>
-	<input id="actorFile" name="actorFile[]" type="file" class="file" multiple="multiple" data-show-upload="false" data-show-caption="true">
-<?php
+print $form->inputFileForm("actorFile",['label'=>'Sélection image']);
+print '</div>';
+print '<div class="col-xs-12">';
+$idRef=$id;
+$iRefType=_TYPE_ACTOR_;
+include $_SERVER['DOCUMENT_ROOT'] . '/media/model/image/view/imageList.php';
 print '</div>';
 print '<div class="col-xs-12" style="display: flex;">';
 print $form->button("Valider",null,['class'=>"media-btn"]);
@@ -46,12 +46,6 @@ print $form->button("Retour",['type'=>'button', 'onclick'=>"javascript:location.
 print '</div>';
 print $form->close();
 panelClose();
-?>
-
-<?php
-	$idRef=$id;
-	$iRefType=_TYPE_ACTOR_;
-	include $_SERVER['DOCUMENT_ROOT'] . '/media/model/image/view/imageList.php';
 ?>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/footer.php'; ?>

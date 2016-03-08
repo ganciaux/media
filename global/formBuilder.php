@@ -177,6 +177,27 @@ class FormBuilder {
 		return '<div class="'.$optionsDIV['class'].'">'.$label.'<input'.$this->attributes($options).'></div>';
 	}
 
+	public function inputFileForm($name, $options = array(), $optionsDIV = array())
+	{
+		if ( isset($options['label']))
+			$label='<label for="'.$name.'">'.$options['label'].'</label>';
+		else
+			$label='';
+
+		if ( ! isset($options['name']))
+			$options['name'] = $name;
+
+		if ( ! isset($options['id']))
+			$options['id'] = $name;
+
+		if (! isset($optionsDIV['class']))
+			$optionsDIV['class']="form-group form-field col-xs-12";
+
+		$options['name'] .= "[]";
+
+		return '<div class="'.$optionsDIV['class'].'">'.$label.'<input type="file" multiple="multiple" data-show-upload="false" data-show-caption="true" class="file"'.$this->attributes($options).'></div>';
+	}
+
 	protected function isSelected($value)
 	{
 		return in_array($value, (array) $this->selected);

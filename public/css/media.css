@@ -99,3 +99,7 @@ tr.even:hover td{
     padding: 5px;
     width: 160px;
 }
+
+.media img{
+    max-width: 160px;
+}

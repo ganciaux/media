@@ -60,10 +60,13 @@ class image
         return (int)$result;
     }
 
-    static function getList($idRef, $iRefType)
+    static function getList($idRef, $iRefType, $bOne=null)
     {
         global $bdd;
         $sql = "select idImage, idRef,iRefType,pathName,fileName from image where idRef=:idRef and iRefType=:iRefType";
+        if (isset($bOne)){
+            $sql.=" limit 1";
+        }
         $req = $bdd->prepare($sql);
         $req->bindParam(":idRef", $idRef, PDO::PARAM_INT);
         $req->bindParam(":iRefType", $iRefType, PDO::PARAM_INT);

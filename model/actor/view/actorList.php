@@ -26,7 +26,7 @@
 				<td><?php print htmlspecialchars($d['firstName']); ?></td>
 				<td>
 					<?php if($isModal==0){ ?>
-						<i id="actor-info-<?php echo $d['idActor']?>" class="fa fa-info-circle popover-info user-action-info" data-object="actor" data-id="<?php echo $d['idActor'] ?>" data-url="/media/model/actor/controller/info.php?idActor=<?php echo $d['idActor']; ?>" data-action="info" data-image="" title="Information"></i>
+						<i id="actor-info-<?php echo $d['idActor']?>" class="fa fa-info-circle popover-info user-action-info" data-object="actor" data-id="<?php echo $d['idActor'] ?>" data-url="/media/model/actor/controller/info.php?idActor=<?php echo $d['idActor']; ?>" data-action="info" data-header="" data-body="" data-image="<?php echo $d['image']; ?>" title="Information"></i>
 						<i onclick="javascript:location.href='/media/model/actor/view/actorManage.php?idActor=<?php echo $d['idActor'] ?>'" class="fa fa-pencil user-action-edit" title="Modifier"></i>
 						<i onclick="javascript:location.href='/media/model/actor/view/actorContentManage.php?idActor=<?php echo $d['idActor'] ?>'" class="fa fa-list-alt user-action-edit" title="Liste"></i>
 						<i id="actor-<?php echo $d['idActor']?>" class="fa fa-trash object-action-delete user-action-delete" data-object="actor" data-id="<?php echo $d['idActor'] ?>" data-confirm="Supprimer l'acteur ?" data-url="/media/model/actor/controller/delete.php?idActor=<?php echo $d['idActor']; ?>" data-action="delete" data-callback="action-delete" title="Supprimer"></i>
