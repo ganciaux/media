@@ -1,5 +1,7 @@
 <?php
 
+include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/content/content.php';
+
 class disk{
 	
 	public $idDisk=0;
@@ -81,6 +83,20 @@ class disk{
 		return $data;
 	}
 
+	static function exists($name,$id){
+		global $bdd;
+		$req = $bdd->prepare('select count(*) from disk where name=:name and idDisk<>:id');
+		$req->bindParam(":name",$name, PDO::PARAM_STR);
+		$req->bindParam(":id", $id, PDO::PARAM_INT);
+		$result=$req->execute();
+		if ($result==true) {
+			$data = $req->fetch();
+			return $data[0];
+		}else{
+			return -1;
+		}
+	}
+
 	function getDisk($id){
 		global $bdd;
 		$req=$bdd->prepare('select idDisk,name,label,size,comment from disk where idDisk=:id');
@@ -102,6 +118,10 @@ class disk{
 
 	static function delete($id){
 			global $bdd;
+			$data=content::getList(null,null,null,['idDisk'=>$id]);
+			foreach($data as $d){
+				$result=content::delete($d['idContent']);
+			}
 			$req = $bdd->prepare('delete from disk where idDisk=:id');
 			$req->bindParam(":id", $id, PDO::PARAM_INT);
 			return (int)$req->execute();

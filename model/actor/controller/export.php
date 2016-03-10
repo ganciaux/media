@@ -19,7 +19,10 @@ $file=$_SERVER['DOCUMENT_ROOT'] . '/media/public/files/'.$filename;
 $fp = fopen($file, 'w');
 if ($fp!=null) {
 	foreach ($data as $d) {
-		fputcsv($fp, $d,";");
+		$actor=['idAcor'=>$d['idActor'],
+			'lastName'=>$d['lastName'],
+			'firstName'=>$d['firstName']];
+		fputcsv($fp, $actor,";");
 	}
 	fclose($fp);
 

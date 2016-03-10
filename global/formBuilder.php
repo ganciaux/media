@@ -195,7 +195,7 @@ class FormBuilder {
 
 		$options['name'] .= "[]";
 
-		return '<div class="'.$optionsDIV['class'].'">'.$label.'<input type="file" multiple="multiple" data-show-upload="false" data-show-caption="true" class="file"'.$this->attributes($options).'></div>';
+		return '<div '.$this->attributes($optionsDIV).'">'.$label.'<input type="file" multiple="multiple" data-show-upload="false" data-show-caption="true" class="file"'.$this->attributes($options).'></div>';
 	}
 
 	protected function isSelected($value)
@@ -328,7 +328,7 @@ class FormBuilder {
 
 		$html='<div class="'.$optionsDIV['class'].'" style="'.$options['style'].'">';
 		$html.='<input type="text" id="'.$options['id'].'" name="'.$options['name'].'" class="'.$options['class'].'" placeholder="'.$options['placeholder'].'">';
-		$html.='<span class="input-group-btn object-action-search" data-url="'.$options['data-url'].'" data-title="'.$options['data-title'].'" data-callback-id="'.$options['data-callback-id'].'" data-callback-url="'.$options['data-callback-url'].'" data-callback-fn="'.$options['data-callback-fn'].'" data-field="'.$options['data-field'].'"><button class="btn btn-primary" type="button">Chercher!</button></span>';
+		$html.='<span class="input-group-btn object-action-search" data-url="'.$options['data-url'].'" data-title="'.$options['data-title'].'" data-callback-id="'.$options['data-callback-id'].'" data-callback-url="'.$options['data-callback-url'].'" data-callback-fn="'.$options['data-callback-fn'].'" data-field="'.$options['data-field'].'"><button class="btn btn-primary" type="button">Chercher</button></span>';
 		$html.='</div>';
 		return $html;
 	}

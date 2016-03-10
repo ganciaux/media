@@ -30,16 +30,20 @@ $form = new formBuilder();
 panelOpen("Paramètres de l'acteur");
 print $form->open(['files'=>true, 'name'=>'actorForm', 'method'=>'post', 'action'=>'/media/model/actor/controller/action.php']);
 print $form->hidden('idActor', $id);
+print $form->hidden('objectList', "");
 print '<div class="col-xs-12">';
 print $form->inputForm("text", "actorLastName", $actor->lastName, ['label'=>'Nom','placeholder'=>'nom']);
 print $form->inputForm("text", "actorFirstName", $actor->firstName, ['label'=>'Prénom','placeholder'=>'prénom']);
 print $form->inputFileForm("actorFile",['label'=>'Sélection image']);
 print '</div>';
-print '<div class="col-xs-12">';
-$idRef=$id;
-$iRefType=_TYPE_ACTOR_;
-include $_SERVER['DOCUMENT_ROOT'] . '/media/model/image/view/imageList.php';
-print '</div>';
+if($id>0) {
+	print '<div class="col-xs-12">';
+	$idRef = $id;
+	$iRefType = _TYPE_ACTOR_;
+	$objectList = "objectList";
+	include $_SERVER['DOCUMENT_ROOT'] . '/media/model/image/view/imageList.php';
+	print '</div>';
+}
 print '<div class="col-xs-12" style="display: flex;">';
 print $form->button("Valider",null,['class'=>"media-btn"]);
 print $form->button("Retour",['type'=>'button', 'onclick'=>"javascript:location.href='/media/model/actor/view/actor.php'"],['class'=>"media-btn"]);

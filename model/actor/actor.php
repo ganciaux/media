@@ -46,7 +46,7 @@ class actor{
             return -1;
         }
     }
-
+		
 	static function getList($bOption=null,$bNone=null,$bAll=null,$options=null){
 		global $bdd;
 		$data=array();
@@ -87,7 +87,7 @@ class actor{
 			else {
 				foreach ($res as $r) {
 					$image = image::getList($r['idActor'], _TYPE_ACTOR_, true);
-					if (isset($image)){
+					if(empty($image[0])==false) {
 						$r['image'] =getPublicPath().$image[0]['pathName'].'/'.$image[0]['fileName'];
 					}
 					else{

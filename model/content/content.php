@@ -1,6 +1,7 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/media/global/utils.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/image/image.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/disk/disk.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/contentType/contentType.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/language/language.php';
@@ -32,6 +33,7 @@ class content{
 	public $idLanguage=0;
 	public $idQuality=0;
 	public $actorList=array();
+	public $images=array();
 	public static $disks;
 	public static $categories;
 	public static $languages;
@@ -119,6 +121,7 @@ class content{
 
 	static function getList($bOption=null,$bNone=null,$bAll=null,$options=array()){
 		global $bdd;
+		$data=array();
 		$sql="select c.idContent,idContentType,name,search,year,idDisk,idLanguage,idQuality from content c";
 		$tables="";
 		$whereoption=" where c.idContent>0";
@@ -196,8 +199,18 @@ class content{
 						$data[$r['idContent']].=' - '.$r['year'];
 				}
 			}
-			else
-				$data = $res;
+			else {
+				foreach ($res as $r) {
+					$image = image::getList($r['idContent'], _TYPE_CONTENT_, true);
+					if(empty($image[0])==false) {
+						$r['image'] =getPublicPath().$image[0]['pathName'].'/'.$image[0]['fileName'];
+					}
+					else{
+						$r['image']="";
+					}
+					array_push ($data, $r);
+				}
+			}
 		}
 		else
 			$data=array();
@@ -264,6 +277,7 @@ class content{
 			$this->idQuality = $data['idQuality'];
 			$this->idLanguage = $data['idLanguage'];
 			$this->setActorList();
+			$this->images=image::getList($id, _TYPE_CONTENT_);
 		}else{
 			$data=init();
 		}
@@ -281,6 +295,9 @@ class content{
 		if ($result==true){
 			$result=self::deleteContentActor(null,$id);
 		}
+
+		if ($result==true)
+			$result=image::delete(null, $id,_TYPE_CONTENT_);
 
 		return (int)$result;
 	}
@@ -301,7 +318,7 @@ class content{
 
 		if ($result==true) {
 			foreach ($this->actorList as $actor){
-				self::setActor($actor['idActor'], $this->idContent);
+				self::setActor($actor, $this->idContent);
 			}
 		}
 

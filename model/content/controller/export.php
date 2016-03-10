@@ -43,8 +43,16 @@ $data=content::getList(null,null,null,$options);
 $file=$_SERVER['DOCUMENT_ROOT'] . '/media/public/files/'.$filename;
 $fp = fopen($file, 'w');
 if ($fp!=null) {
+	content::setList(1,true);
 	foreach ($data as $d) {
-		fputcsv($fp, $d,";");
+		$content=['idContent'=>$d['idContent'],
+			'name'=>$d['name'],
+			'disk'=>getValue(content::$disks,$d['idDisk']),
+			'contentType'=>getValue(content::$contentTypes,$d['idContentType']),
+			'quality'=>getValue(content::$qualities,$d['idQuality']),
+			'language'=>getValue(content::$languages,$d['idLanguage']),
+			'year'=>$d['year']];
+		fputcsv($fp, $content,";");
 	}
 	fclose($fp);
 

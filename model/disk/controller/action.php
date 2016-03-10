@@ -40,13 +40,19 @@
 	}
 
 	if ($status==1){
-		if ($disk->idDisk==0){
-			$result=$disk->insert();
-			$url="/media/model/disk/view/diskManage.php?idDisk=".$disk->idDisk;
+		if (disk::exists($_REQUEST['diskName'],$disk->idDisk)==0) {
+			if ($disk->idDisk == 0) {
+				$result = $disk->insert();
+				$url = "/media/model/disk/view/diskManage.php?idDisk=" . $disk->idDisk;
+			} else {
+				$result = $disk->update();
+				$url = "/media/model/disk/view/disk.php";
+			}
 		}
 		else{
-			$result=$disk->update();
-			$url="/media/model/disk/view/disk.php";
+			$status=422;
+			$errors['diskName']="Existe déja";
+			$result=0;
 		}
 	}else{
 		$result=0;

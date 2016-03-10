@@ -19,7 +19,7 @@
 				<td>
 					<i onclick="javascript:location.href='/media/model/disk/view/diskManage.php?idDisk=<?php echo $d['idDisk'] ?>'" class="fa fa-pencil user-action-edit" title="Modifier"></i>
 					<i onclick="javascript:location.href='/media/model/disk/view/diskContentManage.php?idDisk=<?php echo $d['idDisk'] ?>'" class="fa fa-list-alt user-action-edit" title="Liste"></i>
-					<i id="disk-<?php echo $d['idDisk']?>" class="fa fa-trash object-action-delete user-action-delete" data-object="disk" data-id="<?php echo $d['idDisk'] ?>" data-confirm="Supprimer disque dur ?" data-url="/media/model/disk/controller/delete.php?idDisk=<?php echo $d['idDisk']; ?>" data-action="delete" data-callback="action-delete" title="Supprimer">
+					<i id="disk-<?php echo $d['idDisk']?>" class="fa fa-trash object-action-delete user-action-delete" data-object="disk" data-id="<?php echo $d['idDisk'] ?>" data-confirm="Supprimer disque dur '<?php print htmlspecialchars($d['name']); ?>' ?" data-url="/media/model/disk/controller/delete.php?idDisk=<?php echo $d['idDisk']; ?>" data-action="delete" data-callback="action-delete" title="Supprimer">
 				</td>       
 			</tr>
 		<?php } ?>

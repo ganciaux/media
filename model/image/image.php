@@ -84,28 +84,28 @@ class image
         global $bdd;
         $result=1;
         $images=array();
+
         if (isset($id)) {
             $images[0] = self::getImage($id);
         }
-        if (isset($idRef) && isset($iRefType)) {
+        else if (isset($idRef) && isset($iRefType)) {
             $images = self::getList($idRef,$iRefType);
         }
 
-        print_r($images[0]);
-
-        foreach((array)$images as $image){
-            $req = $bdd->prepare("delete from image where idImage=:id");
-            $req->bindParam(":id", $image['idImage'], PDO::PARAM_INT);
-            $result = $req->execute();
-            if ($result==true) {
-                $result = unlink(getServerPublicPath() . $image['pathName'] . '/' . $image['fileName']);
-                if ($result == true)
-                    $result = unlink(getServerPublicPath() . $image['pathName'] . '/small_' . $image['fileName']);
+        if(empty($images[0])==false) {
+            foreach ((array)$images as $image) {
+                $req = $bdd->prepare("delete from image where idImage=:id");
+                $req->bindParam(":id", $image['idImage'], PDO::PARAM_INT);
+                $result = $req->execute();
+                if ($result == true) {
+                    $result = unlink(getServerPublicPath() . $image['pathName'] . '/' . $image['fileName']);
+                    if ($result == true)
+                        $result = unlink(getServerPublicPath() . $image['pathName'] . '/small_' . $image['fileName']);
+                }
+                if ($result == false)
+                    break;
             }
-            if ($result==false)
-                break;
         }
-
         return (int)$result;
     }
 }

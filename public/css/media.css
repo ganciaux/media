@@ -103,3 +103,7 @@ tr.even:hover td{
 .media img{
     max-width: 160px;
 }
+
+.object-remove{
+     opacity: 0.5;
+ }

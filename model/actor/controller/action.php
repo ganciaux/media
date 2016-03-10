@@ -3,7 +3,6 @@
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/actor/actor.php';
 
 	$result=1;
-	$bUpload=0;
 	$status=1;
 	$actor=new actor();
 	$message="";
@@ -34,6 +33,17 @@
 		$errors['actorLastName']="Nom manquant";
 	}
 
+	if (isset($_REQUEST['objectList']) && strlen($_REQUEST['objectList'])>0){
+		$images = explode(";", $_REQUEST['objectList']);
+		foreach($images as $image){
+			$result=image::delete($image);
+			if ($result==false) {
+				$stauts = 422;
+				break;
+			}
+		}
+	}
+
 	if ($status==1){
 		if (actor::exists($_REQUEST['actorFirstName'],$_REQUEST['actorLastName'],$actor->idActor)==0) {
 			global $bdd;
@@ -61,7 +71,7 @@
 			if ($result==true){
 				$callback="actorAction";
 				$bdd->commit();
-				$imageListParam=['idRef'=>(int)$actor->idActor, 'iRefType' =>_TYPE_ACTOR_];
+				$imageListParam=['idRef'=>(int)$actor->idActor, 'iRefType' =>_TYPE_ACTOR_, 'objectList'=>"objectList"];
 			}else{
 				$bdd->rollBack();
 			}
@@ -73,7 +83,7 @@
 	}else{
 		$result=0;
 	}
-	
+
 	$data = array("result"=>$result, "status"=>$status, "url"=>$url, "message"=>$message, "imageList"=>json_encode($imageListParam), "responseText"=>json_encode($errors));
 	
 	print json_encode($data);	

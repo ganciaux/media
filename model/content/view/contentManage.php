@@ -29,9 +29,10 @@ $content = new content($id);
 $form = new formBuilder();
 
 panelOpen("Paramètres du média");
-print $form->open(['name'=>'contentForm', 'method'=>'post', 'action'=>'/media/model/content/controller/action.php']);
+print $form->open(['files'=>true, 'name'=>'contentForm', 'method'=>'post', 'action'=>'/media/model/content/controller/action.php']);
 print $form->hidden('idContent', $id);
 print $form->hidden('message', "");
+print $form->hidden('objectList', "");
 print '<div>';
 print $form->inputForm("text", "contentName", $content->name, ['label'=>'Nom','placeholder'=>'nom'],['class'=>"form-field form-field-margin-bottom col-xs-8"]);
 print $form->selectForm("contentDisk", $content->idDisk,content::$disks,['label'=>'Disque dur'],['class'=>"form-field form-field-margin-bottom col-xs-4"]);
@@ -52,6 +53,15 @@ print '<div id="actorList" class="col-xs-12" style="margin-bottom: 15px;">';
 $actorList=$content->actorList;
 include_once $_SERVER['DOCUMENT_ROOT'] . '/media/model/actor/view/actorContentList.php';
 print '</div>';
+print $form->inputFileForm("contentFile", ['label' => 'Sélection image'], ['class' => 'col-xs-12', 'style' => "margin-bottom: 15px;"]);
+if($id>0) {
+	print '<div class="col-xs-12">';
+	$idRef = $id;
+	$iRefType = _TYPE_CONTENT_;
+	$objectList = "objectList";
+	include $_SERVER['DOCUMENT_ROOT'] . '/media/model/image/view/imageList.php';
+	print '</div>';
+}
 print '<div class="col-xs-12" style="display: flex;">';
 print $form->button("Valider",null,['class'=>"media-btn"]);
 print $form->button("Retour",['type'=>'button', 'onclick'=>"javascript:location.href='/media/model/content/view/content.php'"],['class'=>"media-btn"]);

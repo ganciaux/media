@@ -147,6 +147,8 @@ fnjsoncallback['jsoncallback'] = function jsoncallback(data){
 
 function imageList(param) {
     var data = JSON.parse(param);
+    $("#"+data.objectList).val('');
+    console.log(data);
     $.ajax({
         url: "/media/model/image/controller/list.php",
         type: "POST",
@@ -357,6 +359,21 @@ $('document').ready(function() {
         $('#modal-object-delete').val(id);
         $('#modal-delete-body').html($(this).data('confirm'));
         $('#modal-delete').modal('show');
+    });
+
+    $(document).on('click', '.object-action-delete-form', function() {
+        var id=$(this).data('id');
+        var object=$(this).data('object');
+        var objectList=$(this).data('object-list');
+        var idList="";
+        $("#"+object+"-"+id).toggleClass('object-remove');
+        $(".object-remove").each(function() {
+            if (idList.length!=0) {
+                idList += ";";
+            }
+            idList+=$(this).data('id');
+        });
+        $("#"+objectList).val(idList);
     });
 
     $(document).on('click', '.object-action-list-delete', function() {

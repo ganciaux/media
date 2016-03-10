@@ -40,8 +40,9 @@
 				<?php } ?>
 				<td>
 				<?php if($isModal==0){ ?>
+					<i id="content-info-<?php echo $d['idContent']?>" class="fa fa-info-circle popover-info user-action-info" data-object="content" data-id="<?php echo $d['idContent'] ?>" data-url="/media/model/content/controller/info.php?idContent=<?php echo $d['idContent']; ?>" data-action="info" data-header="" data-body="" data-image="<?php echo $d['image']; ?>" title="Information"></i>
 					<i onclick="javascript:location.href='/media/model/content/view/contentManage.php?idContent=<?php echo $d['idContent'] ?>'" class="fa fa-pencil user-action-edit" title="Modifier"></i>
-					<i id="content-<?php echo $d['idContent']?>" class="fa fa-trash object-action-delete user-action-delete" data-object="content" data-id="<?php echo $d['idContent'] ?>" data-confirm="Supprimer le média ?" data-url="/media/model/content/controller/delete.php?idContent=<?php echo $d['idContent']; ?>" data-action="delete" data-callback="action-delete" title="Supprimer">
+					<i id="content-<?php echo $d['idContent']?>" class="fa fa-trash object-action-delete user-action-delete" data-object="content" data-id="<?php echo $d['idContent'] ?>" data-confirm="Supprimer le média '<?php print htmlspecialchars($d['name']); ?>' ?" data-url="/media/model/content/controller/delete.php?idContent=<?php echo $d['idContent']; ?>" data-action="delete" data-callback="action-delete" title="Supprimer">
 				<?php }else{
 					if (isset($_REQUEST['idRefDisk'])==1) {
 						$exists = content::diskExists($_REQUEST['idRefDisk'], $d['idContent']);

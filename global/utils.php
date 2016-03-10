@@ -185,3 +185,19 @@ function resizeFile($filepath,$filename,$percent){
 
     return (int)$result;
 }
+
+function getObjectCount($table,$options=null){
+    global $bdd;
+    $sql='select count(*) from '.$table;
+    if (isset($options)){
+        $sql.=$options;
+    }
+    $req = $bdd->prepare($sql);
+    $result=$req->execute();
+    if ($result==true) {
+        $data = $req->fetch();
+        return $data[0];
+    }else{
+        return -1;
+    }
+}
