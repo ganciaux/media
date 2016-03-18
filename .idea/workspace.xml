@@ -22,16 +22,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="contentManage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/content/view/contentManage.php">
+      <file leaf-file-name="actorManage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/actor/view/actorManage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.41463414">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="25" />
+            <state vertical-scroll-proportion="-10.076923">
+              <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
               <folding>
-                <marker date="1457621853258" expanded="true" signature="2071:2090" placeholder="..." />
-                <marker date="1457621853258" expanded="true" signature="2469:2489" placeholder="..." />
-                <marker date="1457621853258" expanded="true" signature="3020:3034" placeholder="..." />
+                <marker date="1457621663875" expanded="true" signature="1535:1549" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actorList.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/actor/view/actorList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8798587">
+              <caret line="76" column="137" selection-start-line="76" selection-start-column="137" selection-end-line="76" selection-end-column="137" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,70 +47,78 @@
       <file leaf-file-name="contentList.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/content/view/contentList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.769231">
-              <caret line="38" column="82" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="82" />
+            <state vertical-scroll-proportion="-11.846154">
+              <caret line="43" column="203" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="203" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="disk.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/disk/disk.php">
+      <file leaf-file-name="actor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/actor/actor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.182927">
-              <caret line="58" column="24" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="24" />
-              <folding>
-                <marker date="1457621029582" expanded="true" signature="699:746" placeholder="select idDis..." />
-                <marker date="1457621029582" expanded="true" signature="1960:2018" placeholder="select count..disk..." />
-                <marker date="1457621029582" expanded="true" signature="2307:2371" placeholder="select idDis..." />
-                <marker date="1457621029582" expanded="true" signature="2897:2930" placeholder="delete from ..." />
-                <marker date="1457621029582" expanded="true" signature="3077:3156" placeholder="insert into ..." />
-                <marker date="1457621029582" expanded="true" signature="3553:3640" placeholder="update disk ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="download.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/global/download.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+            <state vertical-scroll-proportion="-14.384615">
+              <caret line="133" column="58" selection-start-line="132" selection-start-column="8" selection-end-line="133" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="export.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/actor/controller/export.php">
+      <file leaf-file-name="content.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/content/content.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3773584">
-              <caret line="23" column="42" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="42" />
+            <state vertical-scroll-proportion="-4.9636364">
+              <caret line="215" column="26" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
               <folding>
-                <marker date="1457623623894" expanded="true" signature="992:1012" placeholder="..." />
+                <marker date="1457622455120" expanded="true" signature="2112:2172" placeholder="update conte..." />
+                <marker date="1457622455120" expanded="true" signature="2414:2488" placeholder="insert into ..." />
+                <marker date="1457622455120" expanded="true" signature="3019:3044" placeholder="delete from ..." />
+                <marker date="1457622455120" expanded="true" signature="3596:3688" placeholder="select c.idC..." />
+                <marker date="1457622455120" expanded="true" signature="6412:6537" placeholder="select a.idA..actor..." />
+                <marker date="1457622455120" expanded="true" signature="6857:6931" placeholder="select count..content..." />
+                <marker date="1457622455120" expanded="true" signature="7236:7318" placeholder="select count..content_actor..." />
+                <marker date="1457622455120" expanded="true" signature="7608:7716" placeholder="select idCon..." />
+                <marker date="1457622455120" expanded="true" signature="8340:8379" placeholder="delete from ..." />
+                <marker date="1457622455120" expanded="true" signature="8733:8888" placeholder="insert into ..." />
+                <marker date="1457622455120" expanded="true" signature="9660:9728" placeholder="select count..content..." />
+                <marker date="1457622455120" expanded="true" signature="10059:10229" placeholder="update conte..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="disk.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/disk/view/disk.php">
+      <file leaf-file-name="create.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/create.sql">
+          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.3855422">
+              <caret line="85" column="26" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="export.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/model/disk/controller/export.php">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/global/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6908127">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state vertical-scroll-proportion="-5.8076925">
+              <caret line="50" column="75" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
               <folding>
-                <marker date="1457624408990" expanded="true" signature="936:956" placeholder="..." />
+                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="media.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/media.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.379311">
+              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,29 +141,6 @@
             <state vertical-scroll-proportion="25.886793">
               <caret line="14" column="27" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="27" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/content/content.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-92.13207">
-              <caret line="321" column="13" selection-start-line="321" selection-start-column="13" selection-end-line="321" selection-end-column="13" />
-              <folding>
-                <marker date="1457622455120" expanded="true" signature="2112:2172" placeholder="update conte..." />
-                <marker date="1457622455120" expanded="true" signature="2414:2488" placeholder="insert into ..." />
-                <marker date="1457622455120" expanded="true" signature="3019:3044" placeholder="delete from ..." />
-                <marker date="1457622455120" expanded="true" signature="3596:3688" placeholder="select c.idC..." />
-                <marker date="1457622455120" expanded="true" signature="6412:6537" placeholder="select a.idA..actor..." />
-                <marker date="1457622455120" expanded="true" signature="6857:6931" placeholder="select count..content..." />
-                <marker date="1457622455120" expanded="true" signature="7236:7318" placeholder="select count..content_actor..." />
-                <marker date="1457622455120" expanded="true" signature="7608:7716" placeholder="select idCon..." />
-                <marker date="1457622455120" expanded="true" signature="8340:8379" placeholder="delete from ..." />
-                <marker date="1457622455120" expanded="true" signature="8733:8888" placeholder="insert into ..." />
-                <marker date="1457622455120" expanded="true" signature="9660:9728" placeholder="select count..content..." />
-                <marker date="1457622455120" expanded="true" signature="10059:10229" placeholder="update conte..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -184,12 +177,10 @@
         <option value="$PROJECT_DIR$/model/actor/view/actor.php" />
         <option value="$PROJECT_DIR$/model/image/controller/delete.php" />
         <option value="$PROJECT_DIR$/global/modal.php" />
-        <option value="$PROJECT_DIR$/public/css/media.css" />
         <option value="$PROJECT_DIR$/model/image/controller/list.php" />
         <option value="$PROJECT_DIR$/model/image/view/imageList.php" />
         <option value="$PROJECT_DIR$/model/image/image.php" />
         <option value="$PROJECT_DIR$/public/js/media.js" />
-        <option value="$PROJECT_DIR$/global/header.php" />
         <option value="$PROJECT_DIR$/model/home/home.php" />
         <option value="$PROJECT_DIR$/global/utils.php" />
         <option value="$PROJECT_DIR$/model/home/view/home.php" />
@@ -197,7 +188,6 @@
         <option value="$PROJECT_DIR$/global/formBuilder.php" />
         <option value="$PROJECT_DIR$/model/content/view/contentList.php" />
         <option value="$PROJECT_DIR$/model/actor/actor.php" />
-        <option value="$PROJECT_DIR$/model/actor/view/actorList.php" />
         <option value="$PROJECT_DIR$/model/disk/view/diskList.php" />
         <option value="$PROJECT_DIR$/model/disk/controller/action.php" />
         <option value="$PROJECT_DIR$/model/disk/disk.php" />
@@ -208,6 +198,9 @@
         <option value="$PROJECT_DIR$/model/actor/controller/export.php" />
         <option value="$PROJECT_DIR$/model/content/controller/export.php" />
         <option value="$PROJECT_DIR$/model/disk/controller/export.php" />
+        <option value="$PROJECT_DIR$/global/header.php" />
+        <option value="$PROJECT_DIR$/public/css/media.css" />
+        <option value="$PROJECT_DIR$/model/actor/view/actorList.php" />
       </list>
     </option>
   </component>
@@ -223,8 +216,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="357" />
-    <option name="y" value="245" />
+    <option name="x" value="157" />
+    <option name="y" value="177" />
     <option name="width" value="1512" />
     <option name="height" value="778" />
   </component>
@@ -349,108 +342,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="disk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="disk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="disk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="content" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -474,90 +365,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -634,7 +441,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="357" y="245" width="1512" height="778" extended-state="0" />
+    <frame x="157" y="177" width="1512" height="778" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22933884" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -695,14 +502,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/contentType/view/contentTypeList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462">
-          <caret line="23" column="223" selection-start-line="23" selection-start-column="223" selection-end-line="23" selection-end-column="223" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/contentType/controller/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
@@ -739,6 +538,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
           <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -754,6 +554,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.115385">
           <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -858,14 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/media.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="100" column="1" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/image/controller/list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154">
@@ -905,14 +698,6 @@
             <marker date="1457510933777" expanded="true" signature="-1:-1" placeholder="select idIma..image..." />
             <marker date="1457510933777" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/global/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.923077">
-          <caret line="85" column="75" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -982,23 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/actor/actor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0487804">
-          <caret line="133" column="58" selection-start-line="132" selection-start-column="8" selection-end-line="133" selection-end-column="58" />
-          <folding>
-            <marker date="1457606976769" expanded="true" signature="-1:-1" placeholder="select count..actor..." />
-            <marker date="1457606976769" expanded="true" signature="-1:-1" placeholder="select idAct..actor..." />
-            <marker date="1457606976769" expanded="true" signature="-1:-1" placeholder="select idAct..actor..." />
-            <marker date="1457606976769" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1457606976769" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1457606976769" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1457606976769" expanded="true" signature="-1:-1" placeholder="update actor..." />
-            <marker date="1457606976769" expanded="true" signature="-1:-1" placeholder="select count..content_actor..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/content/controller/search.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.615385">
@@ -1015,24 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/actor/view/actorList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.423077">
-          <caret line="31" column="299" selection-start-line="31" selection-start-column="299" selection-end-line="31" selection-end-column="299" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/actor/view/actorManage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.09434">
-          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding>
-            <marker date="1457621663875" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/content/view/content.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5">
@@ -1041,10 +791,131 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/model/disk/disk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.182927">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="24" />
+          <folding>
+            <marker date="1457621029582" expanded="true" signature="-1:-1" placeholder="select idDis..." />
+            <marker date="1457621029582" expanded="true" signature="-1:-1" placeholder="select count..disk..." />
+            <marker date="1457621029582" expanded="true" signature="-1:-1" placeholder="select idDis..." />
+            <marker date="1457621029582" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1457621029582" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1457621029582" expanded="true" signature="-1:-1" placeholder="update disk ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/global/download.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/disk/controller/export.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3773584">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding>
+            <marker date="1457624408990" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/content/view/contentManage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06331471">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="25" />
+          <folding>
+            <marker date="1457621853258" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1457621853258" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1457621853258" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/actor/controller/export.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6908127">
+          <caret line="23" column="42" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <marker date="1457623623894" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/disk/view/disk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/content/controller/export.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8490567">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <marker date="1457624331695" expanded="true" signature="1909:1929" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/content/controller/action.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="25.886793">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/global/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8076925">
+          <caret line="50" column="75" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create.sql">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3855422">
+          <caret line="85" column="26" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/actor/view/actorManage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.076923">
+          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+          <folding>
+            <marker date="1457621663875" expanded="true" signature="1535:1549" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/media.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.379311">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model/content/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-92.13207">
-          <caret line="321" column="13" selection-start-line="321" selection-start-column="13" selection-end-line="321" selection-end-column="13" />
+        <state vertical-scroll-proportion="-4.9636364">
+          <caret line="215" column="26" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
           <folding>
             <marker date="1457622455120" expanded="true" signature="2112:2172" placeholder="update conte..." />
             <marker date="1457622455120" expanded="true" signature="2414:2488" placeholder="insert into ..." />
@@ -1062,92 +933,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/disk/disk.php">
+    <entry file="file://$PROJECT_DIR$/model/actor/actor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.182927">
-          <caret line="58" column="24" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="24" />
-          <folding>
-            <marker date="1457621029582" expanded="true" signature="699:746" placeholder="select idDis..." />
-            <marker date="1457621029582" expanded="true" signature="1960:2018" placeholder="select count..disk..." />
-            <marker date="1457621029582" expanded="true" signature="2307:2371" placeholder="select idDis..." />
-            <marker date="1457621029582" expanded="true" signature="2897:2930" placeholder="delete from ..." />
-            <marker date="1457621029582" expanded="true" signature="3077:3156" placeholder="insert into ..." />
-            <marker date="1457621029582" expanded="true" signature="3553:3640" placeholder="update disk ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/global/download.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="133" column="58" selection-start-line="132" selection-start-column="8" selection-end-line="133" selection-end-column="58" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/disk/view/disk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/actor/controller/export.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3773584">
-          <caret line="23" column="42" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="42" />
-          <folding>
-            <marker date="1457623623894" expanded="true" signature="992:1012" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/content/controller/action.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="25.886793">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/content/view/contentManage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.41463414">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="25" />
-          <folding>
-            <marker date="1457621853258" expanded="true" signature="2071:2090" placeholder="..." />
-            <marker date="1457621853258" expanded="true" signature="2469:2489" placeholder="..." />
-            <marker date="1457621853258" expanded="true" signature="3020:3034" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/content/view/contentList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.769231">
-          <caret line="38" column="82" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="82" />
+        <state vertical-scroll-proportion="-11.846154">
+          <caret line="43" column="203" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="203" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/content/controller/export.php">
+    <entry file="file://$PROJECT_DIR$/model/actor/view/actorList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8490567">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <marker date="1457624331695" expanded="true" signature="1909:1929" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/disk/controller/export.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6908127">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <marker date="1457624408990" expanded="true" signature="936:956" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.8798587">
+          <caret line="76" column="137" selection-start-line="76" selection-start-column="137" selection-end-line="76" selection-end-column="137" />
+          <folding />
         </state>
       </provider>
     </entry>

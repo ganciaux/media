@@ -48,7 +48,7 @@
 
 
   </head>
-  <body role="document">
+  <body role="document" style="background: #f2f2f2 none repeat scroll 0 0;">
 	<nav class="navbar navbar-inverse" style="margin-bottom: 0px;border-radius: 0px;">
 		<div class="container-fluid">
 			<div class="navbar-header">

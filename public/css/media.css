@@ -56,7 +56,7 @@ tr.even:hover td{
     background-color: #fff;
     border-bottom: 1px solid #d2d2d2;
     box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24);
-    margin-top: 5px; margin-bottom: 5px;
+    margin-top: 0px; margin-bottom: 5px;
     margin-left: -40px;
     margin-right: -40px;
     padding: 0 29px;
@@ -100,10 +100,179 @@ tr.even:hover td{
     width: 160px;
 }
 
+/*
 .media img{
     max-width: 160px;
 }
+*/
 
 .object-remove{
      opacity: 0.5;
  }
+
+.product-thumb {
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    display: block;
+    position: relative;
+    //text-align: center;
+    text-decoration: none !important;
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.3s ease 0s;
+    z-index: 1;
+}
+.product-thumb .product-header > img {
+    border-radius: 5px 5px 0 0;
+    display: block;
+}
+.product-thumb .product-inner {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 0 0 5px 5px;
+    border-top: medium none;
+    box-sizing: border-box;
+    padding: 20px 22px;
+    position: relative;
+}
+.product-thumb .product-title {
+    //font-size: 16px;
+    margin-bottom: 5px;
+
+    transform: translate3d(0px, 0px, 0px);
+    z-index: 2;
+}
+.product-thumb .icon-list-rating {
+    color: #48aad6;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+.product-thumb .icon-list-non-rated {
+    color: #949494 !important;
+}
+.product-thumb .product-non-rated {
+    color: #ccc;
+}
+.product-thumb .product-meta {
+    margin-top: 15px;
+}
+.product-thumb .product-price-list, .product-thumb .product-actions-list {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.product-thumb .product-price-list > li, .product-thumb .product-actions-list > li {
+    display: inline-block;
+    margin-right: 15px;
+}
+.product-thumb .product-price-list > li:last-child, .product-thumb .product-actions-list > li:last-child {
+    margin-right: 0;
+}
+.product-thumb .product-actions-list {
+    border-top: 1px dashed #e6e6e6;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+.product-thumb .product-price-list {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.product-thumb .product-price-list > li > span {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.product-thumb .product-price {
+    background: #1f93c8 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 7px;
+}
+.product-thumb .product-old-price {
+    color: #858585;
+    text-decoration: line-through;
+}
+.product-thumb .product-save {
+    font-weight: 600;
+}
+.product-thumb .product-category {
+    color: #a3a3a3;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1em;
+    margin-bottom: 0;
+    margin-top: 15px;
+    text-transform: lowercase;
+}
+.product-thumb .product-category > i {
+    color: #949494;
+    display: block;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+.product-thumb:hover {
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.25);
+    transform: translate3d(0px, -5px, 0px);
+}
+.product-thumb:hover .product-category-icon {
+    filter: none;
+    opacity: 1;
+}
+.product-thumb-horizontal {
+    margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+    .product-thumb-horizontal {
+        background: #fff none repeat scroll 0 0;
+        overflow: hidden;
+        text-align: left;
+    }
+    .product-thumb-horizontal .product-header {
+        border-radius: 0 5px;
+        float: left;
+        padding: 2%;
+        width: 15%;
+    }
+    .product-thumb-horizontal .product-header > img {
+        border-radius: 0;
+    }
+    .product-thumb-horizontal .product-inner {
+        display: block;
+        float: left;
+        padding-left: 30px;
+        //padding-right: 30%;
+        padding-right: 2%;
+        width: 85%;
+    }
+    .product-thumb-horizontal .product-meta {
+        margin-top: 0;
+        padding: 20px 22px;
+        position: absolute;
+        right: 0;
+        text-align: right;
+        top: 0;
+        width: 40%;
+    }
+}
+.product-thumb-hold {
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.15);
+}
+.product-thumb-hold > img {
+    transition: all 0.3s ease 0s;
+}
+.product-thumb-hold:hover {
+    transform: translate3d(0px, 0px, 0px);
+}
+.product-thumb-hold:hover > img {
+    opacity: 0.8;
+}
+
+img {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h2{
+    margin-top: 0px;
+}
